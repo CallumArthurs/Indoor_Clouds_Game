@@ -8,9 +8,13 @@ public class CameraScript : MonoBehaviour {
     bool option = true;
 	void Start () {
         CamTransform = GetComponent<Transform>();
-	}
-	
-	void Update () {
+
+        CamTransform.transform.position = new Vector3(-4, 9, -14);
+        CamTransform.rotation = new Quaternion(20, 0, 0, 0);
+
+    }
+
+    void Update () {
         if (Input.GetKeyDown("q"))
         {
             option = !option;
@@ -42,7 +46,7 @@ public class CameraScript : MonoBehaviour {
     }
     void CamControls2()
     {
-        CamTransform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"),0));
+        CamTransform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"),0),Space.World);
     }
 
 }

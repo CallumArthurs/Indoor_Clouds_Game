@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Turret : MonoBehaviour {
     public float Range;
     public int Damage;
     public GameObject[] Targets;
+    public BlackBoard BlackBoard;
 
     void Start() {
+        BlackBoard = GameObject.FindGameObjectWithTag("BlackBoard").GetComponent<BlackBoard>();
         FindTargets();
     }
 
@@ -25,7 +26,7 @@ public class Turret : MonoBehaviour {
 
     void FindTargets()
     {
-        return;
+        BlackBoard.RequestTargets(this);
     }
     
     void TurretActivate()
@@ -42,9 +43,9 @@ public class Turret : MonoBehaviour {
         //}
         //transform.Rotate(transform.up, (Angle) * Time.deltaTime);
         #endregion
-
-        transform.LookAt(Targets[0].transform);
-
-
+        if(Targets.Length > 0)
+        {
+            transform.LookAt(Targets[0].transform);
+        }
     }
 }
