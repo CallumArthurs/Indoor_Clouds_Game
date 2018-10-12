@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlackBoard : MonoBehaviour {
-    public GameObject[] blackBoardTargets;
+    public List <GameObject> blackBoardTargets = new List<GameObject>();
     void Start() {
 
     }
@@ -14,6 +14,10 @@ public class BlackBoard : MonoBehaviour {
     
     public void RequestTargets(Turret obj)
     {
-        obj.Targets = blackBoardTargets;
+        obj.Targets = blackBoardTargets.ToArray();
+    }
+    public void AddTarget(GameObject obj)
+    {
+        blackBoardTargets.Add(obj);
     }
 }

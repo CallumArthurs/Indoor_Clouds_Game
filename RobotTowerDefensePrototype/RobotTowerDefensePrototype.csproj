@@ -303,6 +303,7 @@
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\FlyingSaucer.cs" />
     <Compile Include="Assets\Scripts\HQ.cs" />
+    <Compile Include="Assets\Scripts\SaucerSpawner.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
