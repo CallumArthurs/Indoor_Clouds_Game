@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlackBoard : MonoBehaviour {
     public List <GameObject> blackBoardTargets = new List<GameObject>();
     void Start() {
-
+       
     }
 
     void Update() {
