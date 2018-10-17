@@ -50,11 +50,11 @@ public class Turret : MonoBehaviour {
         #endregion
         if(targets.Length > 0)
         {
-            //if (targets[0] = null)
-            //{
-            //    FindTargets();
-            //    return;
-            //}
+            if (targets[0] = null)
+            {
+                FindTargets();
+                return;
+            }
             transform.LookAt(targets[0].transform);
             if (Physics.Raycast(transform.position, transform.forward,out rayHit) && curCooldown <= 0)
             {
