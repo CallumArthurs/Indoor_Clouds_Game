@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33711473608584274}
   - component: {fileID: 135548925673060172}
   - component: {fileID: 23851465731571490}
+  - component: {fileID: 114098556577541282}
   m_Layer: 0
   m_Name: flyinSaucer
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273267579267782}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114098556577541282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273267579267782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143bede725900994ba31298de9911858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 15
+  destination: {fileID: 0}
 --- !u!135 &135548925673060172
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -14,7 +14,7 @@ public class BlackBoard : MonoBehaviour {
     
     public void RequestTargets(Turret obj)
     {
-        obj.Targets = blackBoardTargets.ToArray();
+        obj.targets = blackBoardTargets.ToArray();
     }
     public void AddTarget(GameObject obj)
     {
