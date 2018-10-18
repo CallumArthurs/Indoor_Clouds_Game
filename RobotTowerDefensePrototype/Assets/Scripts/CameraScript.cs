@@ -8,21 +8,26 @@ public class CameraScript : MonoBehaviour {
     bool option = true;
 	void Start () {
         CamTransform = GetComponent<Transform>();
-	}
-	
-	void Update () {
+
+        CamTransform.transform.position = new Vector3(-4, 9, -14);
+        CamTransform.rotation = new Quaternion(20, 0, 0, 0);
+
+    }
+
+    void Update () {
         if (Input.GetKeyDown("q"))
         {
             option = !option;
             if (option)
             {
+                //looking at HQ
                 CamTransform.transform.position = new Vector3(-4, 9, -14);
-                CamTransform.rotation = new Quaternion(20, 0, 0, 0);
             }
             else
             {
-                CamTransform.rotation = new Quaternion(0, 0, 0, 0);
+                //on top of HQ
                 CamTransform.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 5f, target.transform.position.z);
+                CamTransform.Rotate(new Vector3(30.0f, 0));
             }
         }
 
@@ -42,7 +47,7 @@ public class CameraScript : MonoBehaviour {
     }
     void CamControls2()
     {
-        CamTransform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"),0));
+        CamTransform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"),0),Space.World);
     }
 
 }

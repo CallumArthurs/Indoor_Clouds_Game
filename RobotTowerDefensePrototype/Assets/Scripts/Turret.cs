@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Turret : MonoBehaviour {
-    public float Range;
-    public int Damage;
-    public GameObject[] Targets;
+    public float range;
+    public int damage = 2;
+    public GameObject[] targets;
+    public BlackBoard blackBoard;
+    public float cooldown = 5.0f;
 
+    private Ray ray;
+    private RaycastHit rayHit;
+    private float curCooldown;
     void Start() {
+        blackBoard = GameObject.FindGameObjectWithTag("BlackBoard").GetComponent<BlackBoard>();
         FindTargets();
     }
 
     void Update() {
-        if (Targets.Length == 0)
+        if (targets.Length == 0)
         {
             FindTargets();
         }
@@ -21,11 +26,12 @@ public class Turret : MonoBehaviour {
         {
             TurretActivate();
         }
+        curCooldown -= Time.deltaTime;
     }
 
     void FindTargets()
     {
-        return;
+        blackBoard.RequestTargets(this);
     }
     
     void TurretActivate()
@@ -42,9 +48,20 @@ public class Turret : MonoBehaviour {
         //}
         //transform.Rotate(transform.up, (Angle) * Time.deltaTime);
         #endregion
-
-        transform.LookAt(Targets[0].transform);
-
-
+        if(targets.Length > 0)
+        {
+            if (targets[0] = null)
+            {
+                FindTargets();
+                return;
+            }
+            transform.LookAt(targets[0].transform);
+            if (Physics.Raycast(transform.position, transform.forward,out rayHit) && curCooldown <= 0)
+            {
+                FlyingSaucer enemy = rayHit.collider.gameObject.GetComponent<FlyingSaucer>();
+                enemy.TakeDamage(damage);
+                curCooldown = cooldown;
+            }
+        }
     }
 }
