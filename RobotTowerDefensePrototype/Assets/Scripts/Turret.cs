@@ -50,7 +50,7 @@ public class Turret : MonoBehaviour {
         #endregion
         if(targets.Length > 0)
         {
-            if (targets[0] = null)
+            if (targets[0] == null)
             {
                 FindTargets();
                 return;
