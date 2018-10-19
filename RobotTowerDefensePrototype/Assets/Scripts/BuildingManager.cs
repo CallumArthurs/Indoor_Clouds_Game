@@ -5,7 +5,8 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour {
     public GameObject[] turrets;
     public Camera curCamera;
-
+    public ResourceManager resourceManager = null;
+    public int[] TurretCosts;
     private bool placingTurret;
     private GameObject curTurret;
     private Ray ray;
@@ -42,7 +43,15 @@ public class BuildingManager : MonoBehaviour {
 
     public void TurretCreate(int turretID)
     {
-        curTurret = Instantiate(turrets[turretID], new Vector3(0,0,0), new Quaternion(0,0,0,0));
-        placingTurret = true;
+        if (TurretCosts[turretID] > resourceManager.money)
+        {
+            return;
+        }
+        else
+        {
+            curTurret = Instantiate(turrets[turretID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            placingTurret = true;
+            resourceManager.ChangeMoney(-50);
+        }
     }
 }
