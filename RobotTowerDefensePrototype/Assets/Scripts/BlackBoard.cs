@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlackBoard : MonoBehaviour {
     public List <GameObject> blackBoardTargets = new List<GameObject>();
     public GameObject HQ;
+    public ResourceManager resourceManager;
 
     private GameObject closestEnemy;
     private float closestEnemyDist = 100;

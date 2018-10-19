@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyingSaucer : MonoBehaviour {
-    public int health = 10;
-    public HQ destination = null;
-    public List<GameObject> path = null;
-    public float speed = 5.0f;
     public BlackBoard blackBoard = null;
+    public List<GameObject> path = null;
+    public HQ destination = null;
+    public float speed = 5.0f;
+    public int health = 10;
+    public int worth = 0;
 
 	void Start () {
 		
@@ -30,6 +31,7 @@ public class FlyingSaucer : MonoBehaviour {
         if(health <= 0)
         {
             blackBoard.blackBoardTargets.Remove(this.gameObject);
+            blackBoard.resourceManager.ChangeMoney(worth);
             Destroy(gameObject);
         }
     }
