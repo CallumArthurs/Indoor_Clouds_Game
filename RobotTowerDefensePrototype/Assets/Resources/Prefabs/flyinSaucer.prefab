@@ -97,6 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   destination: {fileID: 0}
+  path: []
+  speed: 3
 --- !u!135 &135548925673060172
 SphereCollider:
   m_ObjectHideFlags: 1
