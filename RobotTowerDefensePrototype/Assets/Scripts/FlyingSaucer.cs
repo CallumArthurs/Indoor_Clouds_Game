@@ -28,12 +28,17 @@ public class FlyingSaucer : MonoBehaviour {
     public void TakeDamage(int Damage)
     {
         health -= Damage;
-        if(health <= 0)
+        if(health < 0)
         {
             blackBoard.blackBoardTargets.Remove(this.gameObject);
             blackBoard.resourceManager.ChangeMoney(worth);
             Destroy(gameObject);
         }
+    }
+    public void DestroyMe()
+    {
+        blackBoard.blackBoardTargets.Remove(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     public void FollowPath()
