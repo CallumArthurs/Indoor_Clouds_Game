@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour {
     public float range = 20.0f;
     public float cooldown = 5.0f;
     public int damage = 2;
+    public int electricityCost = 10;
     public static int[] cost = {50};
             
     private RaycastHit _rayHit;

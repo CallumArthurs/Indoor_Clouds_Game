@@ -241,5 +241,6 @@ MonoBehaviour:
   target: {fileID: 0}
   blackBoard: {fileID: 0}
   range: 10
-  cooldown: 0.75
-  damage: 2
+  cooldown: 1
+  damage: 5
+  electricityCost: 10

@@ -22,6 +22,7 @@ public class BuildingManager : MonoBehaviour {
             if (_placingTurret && Input.GetMouseButtonDown(0))
             {
                 _curTurret.transform.Translate(new Vector3(0, 0.5f, 0));
+                resourceManager.ChangeElectricity(-_curTurret.GetComponentInChildren<Turret>().electricityCost);
                 _curTurret = null;
                 _placingTurret = false;
             }
