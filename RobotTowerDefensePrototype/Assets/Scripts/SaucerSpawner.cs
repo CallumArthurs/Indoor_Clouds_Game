@@ -26,7 +26,7 @@ public class SaucerSpawner : MonoBehaviour {
 
     public void Spawn(int saucerID)
     {
-        int RandomNumber = Random.Range(0, bBPath.Count - 1);
+        int RandomNumber = Random.Range(0, bBPath.Count);
         Path selectedPath = bBPath[RandomNumber];
 
         GameObject curSaucer = Instantiate(saucers[saucerID], this.transform);
