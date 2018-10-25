@@ -22,13 +22,17 @@ public class BuildingManager : MonoBehaviour {
             if (_placingTurret && Input.GetMouseButtonDown(0))
             {
                 _curTurret.transform.Translate(new Vector3(0, 0.5f, 0));
+                resourceManager.ChangeMoney(-50);
                 resourceManager.ChangeElectricity(-_curTurret.GetComponentInChildren<Turret>().electricityCost);
+                _curTurret.GetComponentInChildren<Turret>().Activate = true;
                 _curTurret = null;
                 _placingTurret = false;
             }
             else if(_placingTurret && Input.GetMouseButton(1))
             {
-
+                Destroy(_curTurret);
+                _curTurret = null;
+                _placingTurret = false;
             }
             else
             {
@@ -52,7 +56,6 @@ public class BuildingManager : MonoBehaviour {
         {
             _curTurret = Instantiate(turrets[turretID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
             _placingTurret = true;
-            resourceManager.ChangeMoney(-50);
         }
     }
 }

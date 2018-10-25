@@ -10,6 +10,7 @@ public class Turret : MonoBehaviour {
     public int damage = 2;
     public int electricityCost = 10;
     public static int[] cost = {50};
+    public bool Activate = false;
             
     private RaycastHit _rayHit;
     private float _curCooldown;
@@ -23,7 +24,7 @@ public class Turret : MonoBehaviour {
         {
             FindTargets();
         }
-        else
+        else if(Activate)
         {
             TurretActivate();
         }
