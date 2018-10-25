@@ -3,27 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SaucerSpawner : MonoBehaviour {
-    public BlackBoard blackBoard;
-    public GameObject[] saucers;
-
+    public BlackBoard blackBoard = null;
+    public GameObject[] saucers = null;
+    public List<Path> bBPath = null;
+    public HQ headQuarters = null;
     public float timer = 5.0f;
-    private float curTime;
+
+    private float _curTime;
 	void Start () {
-        curTime = timer;
+        _curTime = timer;
     }
 	
 	void Update () {
-        curTime -= Time.deltaTime;
+        _curTime -= Time.deltaTime;
 
-        if (curTime < 0.0f)
+        if (_curTime < 0.0f)
         {
-            curTime = timer;
+            _curTime = timer;
             Spawn(0);
         }
 	}
 
     public void Spawn(int saucerID)
     {
-        blackBoard.AddTarget(Instantiate(saucers[saucerID],this.transform));
+        int RandomNumber = Random.Range(0, bBPath.Count);
+        Path selectedPath = bBPath[RandomNumber];
+
+        GameObject curSaucer = Instantiate(saucers[saucerID], this.transform);
+        FlyingSaucer tempSaucer = curSaucer.GetComponent<FlyingSaucer>();
+
+        blackBoard.AddTarget(curSaucer);
+        tempSaucer.destination = headQuarters;
+        tempSaucer.path.AddRange(selectedPath.pathNodes);
+        tempSaucer.blackBoard = blackBoard;
+        curSaucer = null;
+        tempSaucer = null;
     }
 }

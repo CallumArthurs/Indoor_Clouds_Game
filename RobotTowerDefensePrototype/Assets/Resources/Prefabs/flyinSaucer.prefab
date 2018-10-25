@@ -95,8 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143bede725900994ba31298de9911858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  blackBoard: {fileID: 0}
+  path: []
   destination: {fileID: 0}
+  speed: 2
+  health: 10
+  worth: 10
 --- !u!135 &135548925673060172
 SphereCollider:
   m_ObjectHideFlags: 1

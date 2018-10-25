@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
-    Transform CamTransform;
-    public GameObject target;
+    Transform CamTransform = null;
+    public GameObject target = null;
     bool option = true;
 	void Start () {
         CamTransform = GetComponent<Transform>();

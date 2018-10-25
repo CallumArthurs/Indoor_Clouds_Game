@@ -1,0 +1,260 @@
+fileFormatVersion: 2
+guid: 72c1ca1bf07209c478005f5c1aeae3de
+timeCreated: 1540446724
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Head_ROBOT
+    100002: //RootNode
+    100004: ROBOT_Arm_L
+    100006: ROBOT_Arm_R
+    100008: ROBOT_Body
+    100010: ROBOT_Bowtie
+    100012: ROBOT_glass
+    100014: ROBOT_Hand_L
+    100016: ROBOT_Hand_R
+    100018: ROBOT_Laser
+    100020: ROBOT_Shoulder_L
+    100022: ROBOT_Shoulder_R
+    100024: ROBOT_wheel
+    100026: ROBOT_Wheel_Support
+    100028: ROBOT_Wrist_L
+    100030: ROBOT_Wrist_R
+    400000: Head_ROBOT
+    400002: //RootNode
+    400004: ROBOT_Arm_L
+    400006: ROBOT_Arm_R
+    400008: ROBOT_Body
+    400010: ROBOT_Bowtie
+    400012: ROBOT_glass
+    400014: ROBOT_Hand_L
+    400016: ROBOT_Hand_R
+    400018: ROBOT_Laser
+    400020: ROBOT_Shoulder_L
+    400022: ROBOT_Shoulder_R
+    400024: ROBOT_wheel
+    400026: ROBOT_Wheel_Support
+    400028: ROBOT_Wrist_L
+    400030: ROBOT_Wrist_R
+    2100000: Head_ROBOTMat
+    2100002: ROBOT_Arm_LMat
+    2100004: ROBOT_Arm_RMat
+    2100006: ROBOT_BodyMat
+    2100008: ROBOT_BowtieMat
+    2100010: ROBOT_glassMat
+    2100012: ROBOT_Hand_LMat
+    2100014: ROBOT_Hand_RMat
+    2100016: ROBOT_LaserMat
+    2100018: ROBOT_Shoulder_LMat
+    2100020: ROBOT_Shoulder_RMat
+    2100022: ROBOT_wheelMat
+    2100024: ROBOT_Wheel_SupportMat
+    2100026: ROBOT_Wrist_LMat
+    2100028: ROBOT_Wrist_RMat
+    2300000: Head_ROBOT
+    2300002: ROBOT_Arm_L
+    2300004: ROBOT_Arm_R
+    2300006: ROBOT_Body
+    2300008: ROBOT_Bowtie
+    2300010: ROBOT_glass
+    2300012: ROBOT_Hand_L
+    2300014: ROBOT_Hand_R
+    2300016: ROBOT_Laser
+    2300018: ROBOT_Shoulder_L
+    2300020: ROBOT_Shoulder_R
+    2300022: ROBOT_wheel
+    2300024: ROBOT_Wheel_Support
+    2300026: ROBOT_Wrist_L
+    2300028: ROBOT_Wrist_R
+    3300000: Head_ROBOT
+    3300002: ROBOT_Arm_L
+    3300004: ROBOT_Arm_R
+    3300006: ROBOT_Body
+    3300008: ROBOT_Bowtie
+    3300010: ROBOT_glass
+    3300012: ROBOT_Hand_L
+    3300014: ROBOT_Hand_R
+    3300016: ROBOT_Laser
+    3300018: ROBOT_Shoulder_L
+    3300020: ROBOT_Shoulder_R
+    3300022: ROBOT_wheel
+    3300024: ROBOT_Wheel_Support
+    3300026: ROBOT_Wrist_L
+    3300028: ROBOT_Wrist_R
+    4300000: Head_ROBOT
+    4300002: ROBOT_Arm_L
+    4300004: ROBOT_Arm_R
+    4300006: ROBOT_Body
+    4300008: ROBOT_Bowtie
+    4300010: ROBOT_glass
+    4300012: ROBOT_Hand_L
+    4300014: ROBOT_Hand_R
+    4300016: ROBOT_Laser
+    4300018: ROBOT_Shoulder_L
+    4300020: ROBOT_Shoulder_R
+    4300022: ROBOT_wheel
+    4300024: ROBOT_Wheel_Support
+    4300026: ROBOT_Wrist_L
+    4300028: ROBOT_Wrist_R
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton:
+    - name: Robot_animation_idle(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head_ROBOT
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Arm_L
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Arm_R
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Body
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Bowtie
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_glass
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Hand_L
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Hand_R
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Laser
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Shoulder_L
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Shoulder_R
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_wheel
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Wheel_Support
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Wrist_L
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROBOT_Wrist_R
+      parentName: Robot_animation_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

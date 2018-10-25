@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BlackBoard : MonoBehaviour {
     public List <GameObject> blackBoardTargets = new List<GameObject>();
+    public GameObject HQ = null;
+    public ResourceManager resourceManager = null;
+
+    private GameObject _closestEnemy;
+    private float _closestEnemyDist = 100;
     void Start() {
        
     }
@@ -14,7 +19,17 @@ public class BlackBoard : MonoBehaviour {
     
     public void RequestTargets(Turret obj)
     {
-        obj.targets = blackBoardTargets.ToArray();
+        _closestEnemyDist = obj.range;
+        for (int i = 0; i < blackBoardTargets.Count; i++)
+        {
+            if (((blackBoardTargets[i].transform.position) - HQ.transform.position).magnitude < _closestEnemyDist)
+            {
+                _closestEnemy = blackBoardTargets[i];
+                _closestEnemyDist = ((blackBoardTargets[i].transform.position) - HQ.transform.position).magnitude;
+            }
+        }
+
+        obj.target = _closestEnemy;
     }
     public void AddTarget(GameObject obj)
     {

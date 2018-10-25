@@ -3,30 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour {
-    public float range;
-    public int damage = 2;
-    public GameObject[] targets;
-    public BlackBoard blackBoard;
+    public GameObject target = null;
+    public BlackBoard blackBoard = null;
+    public float range = 20.0f;
     public float cooldown = 5.0f;
-
-    private Ray ray;
-    private RaycastHit rayHit;
-    private float curCooldown;
+    public int damage = 2;
+    public int electricityCost = 10;
+    public static int[] cost = {50};
+    public bool Activate = false;
+            
+    private RaycastHit _rayHit;
+    private float _curCooldown;
     void Start() {
         blackBoard = GameObject.FindGameObjectWithTag("BlackBoard").GetComponent<BlackBoard>();
         FindTargets();
     }
 
     void Update() {
-        if (targets.Length == 0)
+        if (target == null)
         {
             FindTargets();
         }
-        else
+        else if(Activate)
         {
             TurretActivate();
         }
-        curCooldown -= Time.deltaTime;
+        _curCooldown -= Time.deltaTime;
     }
 
     void FindTargets()
@@ -48,20 +50,21 @@ public class Turret : MonoBehaviour {
         //}
         //transform.Rotate(transform.up, (Angle) * Time.deltaTime);
         #endregion
-        if(targets.Length > 0)
+        if ((target.transform.position - transform.position).magnitude > range)
         {
-            if (targets[0] = null)
+            target = null;
+            return;
+        }
+        transform.LookAt(target.transform);
+        if (Physics.Raycast(transform.position, transform.forward,out _rayHit) && _curCooldown <= 0)
+        {
+            FlyingSaucer enemy = _rayHit.collider.gameObject.GetComponent<FlyingSaucer>();
+            if (enemy == null)
             {
-                FindTargets();
                 return;
             }
-            transform.LookAt(targets[0].transform);
-            if (Physics.Raycast(transform.position, transform.forward,out rayHit) && curCooldown <= 0)
-            {
-                FlyingSaucer enemy = rayHit.collider.gameObject.GetComponent<FlyingSaucer>();
-                enemy.TakeDamage(damage);
-                curCooldown = cooldown;
-            }
+            enemy.TakeDamage(damage);
+            _curCooldown = cooldown;
         }
     }
 }
