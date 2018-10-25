@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HQ : MonoBehaviour {
-    public int health;
-    public Text healthtxt;
-    public SceneSwitcher SceneManager;
+    public int health = 50;
+    public Text healthtxt = null;
+    public SceneSwitcher SceneManager = null;
 
 	void Start () {
         UpdateHealth();

@@ -303,6 +303,7 @@
     <Compile Include="Assets\Scripts\DifficultyManager.cs" />
     <Compile Include="Assets\Scripts\FlyingSaucer.cs" />
     <Compile Include="Assets\Scripts\HQ.cs" />
+    <Compile Include="Assets\Scripts\Path.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\SaucerSpawner.cs" />
     <Compile Include="Assets\Scripts\SceneSwitcher.cs" />

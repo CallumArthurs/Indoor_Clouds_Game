@@ -3,38 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingManager : MonoBehaviour {
-    public GameObject[] turrets;
-    public Camera curCamera;
+    public GameObject[] turrets = null;
+    public Camera curCamera = null;
     public ResourceManager resourceManager = null;
-    public int[] TurretCosts;
-    private bool placingTurret;
-    private GameObject curTurret;
-    private Ray ray;
-    private RaycastHit mousePos;
+
+    private bool _placingTurret;
+    private GameObject _curTurret;
+    private Ray _ray;
+    private RaycastHit _mousePos;
 
 	void Start () {
 		
 	}
 
     void Update() {
-        if (curTurret != null)
+        if (_curTurret != null)
         {
-            if (placingTurret && Input.GetMouseButtonDown(0))
+            if (_placingTurret && Input.GetMouseButtonDown(0))
             {
-                curTurret.transform.Translate(new Vector3(0, 0.5f, 0));
-                curTurret = null;
-                placingTurret = false;
+                _curTurret.transform.Translate(new Vector3(0, 0.5f, 0));
+                _curTurret = null;
+                _placingTurret = false;
             }
-            else if(placingTurret && Input.GetMouseButton(1))
+            else if(_placingTurret && Input.GetMouseButton(1))
             {
 
             }
             else
             {
-                ray = curCamera.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out mousePos))
+                _ray = curCamera.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(_ray, out _mousePos))
                 {
-                    curTurret.transform.position = mousePos.point;
+                    _curTurret.transform.position = _mousePos.point;
                 }
             }
         }
@@ -43,14 +43,14 @@ public class BuildingManager : MonoBehaviour {
 
     public void TurretCreate(int turretID)
     {
-        if (TurretCosts[turretID] > resourceManager.money)
+        if (Turret.cost[turretID] > resourceManager.money)
         {
             return;
         }
         else
         {
-            curTurret = Instantiate(turrets[turretID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-            placingTurret = true;
+            _curTurret = Instantiate(turrets[turretID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            _placingTurret = true;
             resourceManager.ChangeMoney(-50);
         }
     }
