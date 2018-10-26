@@ -7,8 +7,7 @@ public class FlyingSaucer : MonoBehaviour {
     public List<GameObject> path = null;
     public HQ destination = null;
     public float speed = 5.0f;
-    public int health = 10;
-    public int worth = 0;
+    public int health = 10, worth = 0;
 
 	void Start () {
 		

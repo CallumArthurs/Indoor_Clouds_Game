@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlackBoard : MonoBehaviour {
-    public List <GameObject> blackBoardTargets = new List<GameObject>();
+    public List<GameObject> blackBoardTargets;
     public GameObject HQ = null;
     public ResourceManager resourceManager = null;
 
     private GameObject _closestEnemy;
     private float _closestEnemyDist = 100;
+
     void Start() {
        
     }
-
     void Update() {
 
     }

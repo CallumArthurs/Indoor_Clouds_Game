@@ -2,29 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour {
+public class Turret : Building {
     public GameObject target = null;
     public BlackBoard blackBoard = null;
-    public float range = 20.0f;
-    public float cooldown = 5.0f;
-    public int damage = 2;
-    public int electricityCost = 10;
-    public static int[] cost = {50};
-    public bool Activate = false;
-            
+    public float range = 20.0f, cooldown = 5.0f;
+    public int damage = 2, turretID = 0, pubCost = 50;
+    public bool activate = false;
+    public bool connected;
+
+    public static float modifier = 1;
+    public static bool noElectricity = false;
     private RaycastHit _rayHit;
     private float _curCooldown;
+
+    private void Awake()
+    {
+        cost[turretID] = pubCost;
+    }
     void Start() {
         blackBoard = GameObject.FindGameObjectWithTag("BlackBoard").GetComponent<BlackBoard>();
         FindTargets();
     }
 
     void Update() {
+        activate = !noElectricity;
+
         if (target == null)
         {
             FindTargets();
         }
-        else if(Activate)
+        else if(activate)
         {
             TurretActivate();
         }
@@ -64,7 +71,7 @@ public class Turret : MonoBehaviour {
                 return;
             }
             enemy.TakeDamage(damage);
-            _curCooldown = cooldown;
+            _curCooldown = cooldown * modifier;
         }
     }
 }
