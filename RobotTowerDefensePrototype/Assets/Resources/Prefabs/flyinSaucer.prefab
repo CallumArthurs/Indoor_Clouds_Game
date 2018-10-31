@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 135548925673060172}
   - component: {fileID: 23851465731571490}
   - component: {fileID: 114098556577541282}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: flyinSaucer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,9 +98,10 @@ MonoBehaviour:
   blackBoard: {fileID: 0}
   path: []
   destination: {fileID: 0}
-  speed: 2
+  speed: 1
   health: 10
   worth: 10
+  particles: {fileID: 1573409169550558, guid: 95d011732cd336f47a0bf22c927e2ed3, type: 2}
 --- !u!135 &135548925673060172
 SphereCollider:
   m_ObjectHideFlags: 1

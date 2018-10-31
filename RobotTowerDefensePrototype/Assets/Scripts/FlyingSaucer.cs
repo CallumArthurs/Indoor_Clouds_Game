@@ -8,6 +8,7 @@ public class FlyingSaucer : MonoBehaviour {
     public HQ destination = null;
     public float speed = 5.0f;
     public int health = 10, worth = 0;
+    public GameObject particles;
 
 	void Start () {
 		
@@ -29,15 +30,16 @@ public class FlyingSaucer : MonoBehaviour {
         health -= Damage;
         if(health < 0)
         {
-            blackBoard.blackBoardTargets.Remove(this.gameObject);
             blackBoard.resourceManager.ChangeMoney(worth);
-            Destroy(gameObject);
+            DestroyMe();
         }
     }
     public void DestroyMe()
     {
         blackBoard.blackBoardTargets.Remove(this.gameObject);
         Destroy(this.gameObject);
+        Instantiate(particles, transform.position, transform.rotation);
+
     }
 
     public void FollowPath()

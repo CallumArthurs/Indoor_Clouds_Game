@@ -10,8 +10,8 @@ public class BuildingManager : MonoBehaviour {
     public ResourceManager resourceManager = null;
     public Text[] buildingUI = null;
 
-    private bool _placingTurret;
-    private bool _placingPowerPlant;
+    private enum enumBuildingID {turretID,powerPlantID};
+    private bool _placingBuilding;
     private GameObject _curBuilding;
     private Ray _ray;
     private RaycastHit _mousePos;
@@ -24,48 +24,34 @@ public class BuildingManager : MonoBehaviour {
         if (_curBuilding != null)
         {
             UpdateBuildCosts();
-            if (_placingTurret)
+            if (_placingBuilding)
             {
-                if (_placingTurret && Input.GetMouseButtonDown(0))
+                if (_placingBuilding && Input.GetMouseButtonDown(0))
                 {
-                    Turret _curTurretScript = _curBuilding.GetComponentInChildren<Turret>();
-                    resourceManager.ChangeMoney(-Building.cost[_curTurretScript.turretID]);
-                    resourceManager.ChangeElectricity(-_curTurretScript.electricityCost);
-                    _curTurretScript.activate = true;
-                    resourceManager.turrets.Add(_curTurretScript);
+                    Building _curBuildingScript = _curBuilding.GetComponentInChildren<Building>();
+                    resourceManager.ChangeMoney(-Building.cost[_curBuildingScript.buildingID]);
+                    resourceManager.ChangeElectricity(Building.electricityCost[_curBuildingScript.buildingID]);
+                    _curBuildingScript.active = true;
+
+                    if (_curBuildingScript.buildingID == (int)enumBuildingID.turretID)
+                    {
+                        resourceManager.turrets.Add((Turret)_curBuildingScript);
+                    }
                     _curBuilding = null;
-                    _placingTurret = false;
+                    _placingBuilding = false;
                     return;
                 }
-                else if (_placingTurret && Input.GetMouseButton(1))
+                else if (_placingBuilding && Input.GetMouseButton(1))
                 {
                     Destroy(_curBuilding);
                     _curBuilding = null;
-                    _placingTurret = false;
+                    _placingBuilding = false;
                     return;
                 }
             }
-            else if (_placingPowerPlant)
-            {
-                if (_placingPowerPlant && Input.GetMouseButtonDown(0))
-                {
-                    PowerPlant _curPowerPlantScript = powerPlant.GetComponent<PowerPlant>();
-                    resourceManager.ChangeElectricity(_curPowerPlantScript.generatedPower);
-                    resourceManager.ChangeMoney(-PowerPlant.cost);
-                    _curBuilding = null;
-                    _placingPowerPlant = false;
-                    return;
-                }
-                else if (_placingTurret && Input.GetMouseButton(1))
-                {
-                    Destroy(_curBuilding);
-                    _curBuilding = null;
-                    _placingPowerPlant = false;
-                    return;
-                }
-            }
+            
             _ray = curCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(_ray, out _mousePos))
+            if (Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Saucer"))))
             {
                 _curBuilding.transform.position = _mousePos.point;
                 _curBuilding.transform.Translate(new Vector3(0,0.5f,0));
@@ -79,16 +65,18 @@ public class BuildingManager : MonoBehaviour {
         if (Turret.cost[turretID] < resourceManager.money)
         {
             _curBuilding = Instantiate(turrets[turretID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-            _placingTurret = true;
+            _curBuilding.GetComponentInChildren<Building>().buildingID = (int)enumBuildingID.turretID;
+            _placingBuilding = true;
             _curBuilding.layer = 0;
         }
     }
     public void PowerPlantCreate()
     {
-        if (PowerPlant.cost < resourceManager.money)
+        if (PowerPlant.cost[0] < resourceManager.money)
         {
             _curBuilding = Instantiate(powerPlant, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-            _placingPowerPlant = true;
+            _curBuilding.GetComponentInChildren<Building>().buildingID = (int)enumBuildingID.powerPlantID;
+            _placingBuilding = true;
         }
     }
     public void UpdateBuildCosts()

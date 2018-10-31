@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4282965242856926}
   - component: {fileID: 33991199059759606}
   - component: {fileID: 23620248929146234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: turretBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33475755803196652}
   - component: {fileID: 23901967045060904}
   - component: {fileID: 114135423619549636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4110141322632030}
   - component: {fileID: 33440966374301224}
   - component: {fileID: 23713462675297090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,12 +238,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f094db10bbfd07e4ca31ed1a5dba8f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  electricityCost: 10
+  buildingID: 0
   active: 0
   target: {fileID: 0}
   blackBoard: {fileID: 0}
-  range: 10
-  cooldown: 1
+  range: 20
+  cooldown: 0.5
   damage: 5
   turretID: 0
   pubCost: 50

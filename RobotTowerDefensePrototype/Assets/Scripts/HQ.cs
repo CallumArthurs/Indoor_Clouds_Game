@@ -7,6 +7,7 @@ public class HQ : MonoBehaviour {
     public int health = 50;
     public Text healthtxt = null;
     public SceneSwitcher SceneManager = null;
+    public GameObject particles;
 
 	void Start () {
         UpdateHealth();
