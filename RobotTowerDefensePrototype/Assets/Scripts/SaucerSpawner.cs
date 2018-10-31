@@ -29,7 +29,7 @@ public class SaucerSpawner : MonoBehaviour {
         int RandomNumber = Random.Range(0, bBPath.Count);
         Path selectedPath = bBPath[RandomNumber];
 
-        GameObject curSaucer = Instantiate(saucers[saucerID], this.transform);
+        GameObject curSaucer = Instantiate(saucers[saucerID], transform);
         FlyingSaucer tempSaucer = curSaucer.GetComponent<FlyingSaucer>();
 
         blackBoard.AddTarget(curSaucer);

@@ -21,7 +21,10 @@ public class FlyingSaucer : MonoBehaviour {
         }
         else
         {
-            path.Add(destination.gameObject);
+            if (destination != null)
+            {
+                path.Add(destination.gameObject);
+            }
         }
     }
 
@@ -36,8 +39,8 @@ public class FlyingSaucer : MonoBehaviour {
     }
     public void DestroyMe()
     {
-        blackBoard.blackBoardTargets.Remove(this.gameObject);
-        Destroy(this.gameObject);
+        BlackBoard.saucerTargets.Remove(gameObject);
+        Destroy(gameObject);
         Instantiate(particles, transform.position, transform.rotation);
 
     }

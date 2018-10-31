@@ -7,6 +7,7 @@ public class Building : MonoBehaviour {
     public static int[] cost = {50, 100};
     public int buildingID = 0;
     public bool active = false;
+    public bool powered = false;
     void Start () {
 		
 	}
@@ -14,4 +15,9 @@ public class Building : MonoBehaviour {
 	void Update () {
 		
 	}
+    public void ChangePowered(bool value)
+    {
+        powered = value;
+    }
+
 }

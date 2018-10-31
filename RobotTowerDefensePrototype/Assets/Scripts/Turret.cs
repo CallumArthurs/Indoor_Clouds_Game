@@ -25,13 +25,12 @@ public class Turret : Building {
     }
 
     void Update() {
-        activate = !noElectricity;
 
         if (target == null)
         {
             FindTargets();
         }
-        else if(activate)
+        else if (powered)
         {
             TurretActivate();
         }
@@ -42,7 +41,7 @@ public class Turret : Building {
     {
         blackBoard.RequestTargets(this);
     }
-    
+
     void TurretActivate()
     {
         #region lerped lookat?
@@ -63,7 +62,7 @@ public class Turret : Building {
             return;
         }
         transform.LookAt(target.transform);
-        if (Physics.Raycast(transform.position, transform.forward,out _rayHit) && _curCooldown <= 0)
+        if (Physics.Raycast(transform.position, transform.forward, out _rayHit) && _curCooldown <= 0)
         {
             FlyingSaucer enemy = _rayHit.collider.gameObject.GetComponent<FlyingSaucer>();
             if (enemy == null)

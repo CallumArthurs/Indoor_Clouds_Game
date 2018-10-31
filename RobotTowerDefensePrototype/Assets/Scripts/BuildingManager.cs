@@ -24,30 +24,28 @@ public class BuildingManager : MonoBehaviour {
         if (_curBuilding != null)
         {
             UpdateBuildCosts();
-            if (_placingBuilding)
+            if (_placingBuilding && Input.GetMouseButtonDown(0))
             {
-                if (_placingBuilding && Input.GetMouseButtonDown(0))
-                {
-                    Building _curBuildingScript = _curBuilding.GetComponentInChildren<Building>();
-                    resourceManager.ChangeMoney(-Building.cost[_curBuildingScript.buildingID]);
-                    resourceManager.ChangeElectricity(Building.electricityCost[_curBuildingScript.buildingID]);
-                    _curBuildingScript.active = true;
+                Building _curBuildingScript = _curBuilding.GetComponentInChildren<Building>();
+                resourceManager.ChangeMoney(-Building.cost[_curBuildingScript.buildingID]);
+                resourceManager.ChangeElectricity(Building.electricityCost[_curBuildingScript.buildingID]);
+                _curBuildingScript.active = true;
 
-                    if (_curBuildingScript.buildingID == (int)enumBuildingID.turretID)
-                    {
-                        resourceManager.turrets.Add((Turret)_curBuildingScript);
-                    }
-                    _curBuilding = null;
-                    _placingBuilding = false;
-                    return;
-                }
-                else if (_placingBuilding && Input.GetMouseButton(1))
+                if (_curBuildingScript.buildingID == (int)enumBuildingID.turretID)
                 {
-                    Destroy(_curBuilding);
-                    _curBuilding = null;
-                    _placingBuilding = false;
-                    return;
+                    resourceManager.turrets.Add((Turret)_curBuildingScript);
                 }
+
+                _curBuilding = null;
+                _placingBuilding = false;
+                return;
+            }
+            else if (_placingBuilding && Input.GetMouseButton(1))
+            {
+                Destroy(_curBuilding);
+                _curBuilding = null;
+                _placingBuilding = false;
+                return;
             }
             
             _ray = curCamera.ScreenPointToRay(Input.mousePosition);
@@ -62,7 +60,7 @@ public class BuildingManager : MonoBehaviour {
 
     public void TurretCreate(int turretID)
     {
-        if (Turret.cost[turretID] < resourceManager.money)
+        if (Building.cost[turretID] < resourceManager.money)
         {
             _curBuilding = Instantiate(turrets[turretID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
             _curBuilding.GetComponentInChildren<Building>().buildingID = (int)enumBuildingID.turretID;
@@ -72,7 +70,7 @@ public class BuildingManager : MonoBehaviour {
     }
     public void PowerPlantCreate()
     {
-        if (PowerPlant.cost[0] < resourceManager.money)
+        if (Building.cost[0] < resourceManager.money)
         {
             _curBuilding = Instantiate(powerPlant, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
             _curBuilding.GetComponentInChildren<Building>().buildingID = (int)enumBuildingID.powerPlantID;

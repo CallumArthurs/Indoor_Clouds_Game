@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlackBoard : MonoBehaviour {
-    public List<GameObject> blackBoardTargets;
+    public static List<GameObject> saucerTargets = new List<GameObject>();
+    public static List<GameObject> buildings = new List<GameObject>();
+
     public GameObject HQ = null;
     public ResourceManager resourceManager = null;
 
@@ -20,12 +22,12 @@ public class BlackBoard : MonoBehaviour {
     public void RequestTargets(Turret obj)
     {
         _closestEnemyDist = obj.range;
-        for (int i = 0; i < blackBoardTargets.Count; i++)
+        for (int i = 0; i < saucerTargets.Count; i++)
         {
-            if (((blackBoardTargets[i].transform.position) - HQ.transform.position).magnitude < _closestEnemyDist)
+            if (((saucerTargets[i].transform.position) - HQ.transform.position).magnitude < _closestEnemyDist)
             {
-                _closestEnemy = blackBoardTargets[i];
-                _closestEnemyDist = ((blackBoardTargets[i].transform.position) - HQ.transform.position).magnitude;
+                _closestEnemy = saucerTargets[i];
+                _closestEnemyDist = ((saucerTargets[i].transform.position) - HQ.transform.position).magnitude;
             }
         }
 
@@ -33,6 +35,6 @@ public class BlackBoard : MonoBehaviour {
     }
     public void AddTarget(GameObject obj)
     {
-        blackBoardTargets.Add(obj);
+        saucerTargets.Add(obj);
     }
 }
