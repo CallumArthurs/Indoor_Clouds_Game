@@ -7,7 +7,6 @@ public class Turret : Building {
     public BlackBoard blackBoard = null;
     public float range = 20.0f, cooldown = 5.0f;
     public int damage = 2, turretID = 0, pubCost = 50;
-    public bool activate = false;
     public bool connected;
 
     public static float modifier = 1;

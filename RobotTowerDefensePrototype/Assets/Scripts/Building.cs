@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Building : MonoBehaviour {
-    public static int[] electricityCost = {-10, 20};
-    public static int[] cost = {50, 100};
+    public static int[] electricityCost = {-10, 20, 0};
+    public static int[] cost = {50, 100, 20};
+    public List<Building> connections;
     public int buildingID = 0;
-    public bool active = false;
     public bool powered = false;
     void Start () {
 		
@@ -15,7 +15,7 @@ public class Building : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void ChangePowered(bool value)
+    public virtual void ChangePowered(bool value)
     {
         powered = value;
     }

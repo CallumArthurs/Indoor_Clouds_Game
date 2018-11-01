@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 135548925673060172}
   - component: {fileID: 23851465731571490}
   - component: {fileID: 114098556577541282}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: flyinSaucer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4977657268668136}
   - component: {fileID: 33450705553529408}
   - component: {fileID: 23478271645228292}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4795329312774036}
   - component: {fileID: 33215611113952024}
   - component: {fileID: 23122474726503558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,8 @@ GameObject:
   - component: {fileID: 33454215715953804}
   - component: {fileID: 23814389168527250}
   - component: {fileID: 114797144496446810}
-  m_Layer: 0
+  - component: {fileID: 65591632055965942}
+  m_Layer: 9
   m_Name: PowerPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313266527939982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.53, y: 0.828, z: 4.860792}
+  m_LocalPosition: {x: 4.4745536, y: 0.7821392, z: 1.4641327}
   m_LocalScale: {x: 0.6703893, y: 1.5642784, z: 1}
   m_Children:
   - {fileID: 4795329312774036}
@@ -227,6 +228,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313266527939982}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65591632055965942
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1313266527939982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1.2308699, z: 1}
+  m_Center: {x: 0, y: 0.11543508, z: 0}
 --- !u!114 &114797144496446810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,7 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e632b796e4939049b9492e8860a479d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceManager: {fileID: 0}
   connections: []
+  buildingID: 0
+  active: 0
+  powered: 0
+  resourceManager: {fileID: 0}
   generatedPower: 10
   pubCost: 50
