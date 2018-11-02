@@ -7,9 +7,11 @@ public class BuildingManager : MonoBehaviour {
     public GameObject[] turrets = null;
     public GameObject transmitter = null;
     public GameObject powerPlant = null;
+    public GameObject connector = null;
     public Text[] buildingUI = null;
     public Camera curCamera = null;
     public ResourceManager resourceManager = null;
+
 
     private enum enumBuildingID {turretID,powerPlantID,TransmitterID};
     private bool _placingBuilding, _placingConnector;
@@ -18,7 +20,8 @@ public class BuildingManager : MonoBehaviour {
     private RaycastHit _mousePos;
     private Building _connection;
     private Transmitter _connector;
-
+    private List<Connector> connectors = new List<Connector>();
+    
     void Start () {
 
     }
@@ -115,6 +118,10 @@ public class BuildingManager : MonoBehaviour {
     }
     private void BuildingConnector()
     {
+        for (int i = 0; i < connectors.Count; i++)
+        {
+            connectors[i].ActivateRenderer(true);
+        }
         if (Input.GetMouseButtonDown(0))
         {
             _ray = curCamera.ScreenPointToRay(Input.mousePosition);
@@ -128,13 +135,15 @@ public class BuildingManager : MonoBehaviour {
                 {
                     _connection = _mousePos.collider.GetComponent<Building>();
                 }
-
                 if (_connection != null && _connector != null)
                 {
                     _connector.Connection(_connection);
+                    Connector tempConnector =Instantiate(connector, _connector.transform.position, _connector.transform.rotation).GetComponent<Connector>();
+                    tempConnector.firstConnection = _connector.transform.position;
+                    tempConnector.secondConnection = _connection.transform.position;
+                    connectors.Add(tempConnector);
                     _connection = null;
                     _connector = null;
-                    _placingConnector = false;
                 }
             }
         }
@@ -143,6 +152,11 @@ public class BuildingManager : MonoBehaviour {
             _connection = null;
             _connector = null;
             _placingConnector = false;
+
+            for (int i = 0; i < connectors.Count; i++)
+            {
+                connectors[i].ActivateRenderer(false);
+            }
         }
     }
 }

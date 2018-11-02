@@ -39,9 +39,9 @@ public class FlyingSaucer : MonoBehaviour {
     }
     public void DestroyMe()
     {
+        Instantiate(particles, transform.position, transform.rotation);
         BlackBoard.saucerTargets.Remove(gameObject);
         Destroy(gameObject);
-        Instantiate(particles, transform.position, transform.rotation);
 
     }
 
