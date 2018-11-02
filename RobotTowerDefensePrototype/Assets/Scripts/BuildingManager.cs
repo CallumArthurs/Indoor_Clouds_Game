@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BuildingManager : MonoBehaviour {
-    public GameObject[] turrets = null;
-    public GameObject transmitter = null;
-    public GameObject powerPlant = null;
+    public GameObject[] Buildings = null;
     public GameObject connector = null;
     public Text[] buildingUI = null;
     public Camera curCamera = null;
@@ -18,9 +16,10 @@ public class BuildingManager : MonoBehaviour {
     private GameObject _curBuilding;
     private Ray _ray;
     private RaycastHit _mousePos;
-    private Building _connection;
+    private Building _connection, _selectedBuilding;
     private Transmitter _connector;
     private List<Connector> connectors = new List<Connector>();
+    private Text _Powered;
     
     void Start () {
 
@@ -36,36 +35,26 @@ public class BuildingManager : MonoBehaviour {
             BuildingConnector();
         }
         
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    _ray = curCamera.ScreenPointToRay(Input.mousePosition);
+        //    if (Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Building non-collidables"))))
+        //    {
+        //        _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
+        //    }
+        //}
+        //else if(_selectedBuilding != null)
+        //{
+            
+        //}
     }
-
-    public void TurretCreate(int turretID)
+    public void CreateBuilding (int BuildingID)
     {
-        if (Building.cost[turretID] < resourceManager.money)
+        if (Building.cost[BuildingID] < resourceManager.money)
         {
-            _curBuilding = Instantiate(turrets[turretID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-            _curBuilding.GetComponentInChildren<Building>().buildingID = (int)enumBuildingID.turretID;
-            _placingBuilding = true;
-            _curBuilding.layer = 0;
-        }
-
-        UpdateBuildCosts();
-    }
-    public void PowerPlantCreate()
-    {
-        if (Building.cost[0] < resourceManager.money)
-        {
-            _curBuilding = Instantiate(powerPlant, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-            _curBuilding.GetComponentInChildren<Building>().buildingID = (int)enumBuildingID.powerPlantID;
-            _placingBuilding = true;
-        }
-        UpdateBuildCosts();
-    }
-    public void TransmittorCreate()
-    {
-        if (Building.cost[0] < resourceManager.money)
-        {
-            _curBuilding = Instantiate(transmitter, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-            _curBuilding.GetComponent<Building>().buildingID = (int)enumBuildingID.TransmitterID;
+            _selectedBuilding = null;
+            _curBuilding = Instantiate(Buildings[BuildingID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            _curBuilding.GetComponentInChildren<Building>().buildingID = BuildingID;
             _placingBuilding = true;
         }
 

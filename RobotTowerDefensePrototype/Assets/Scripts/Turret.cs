@@ -53,7 +53,6 @@ public class Turret : Building {
             target.transform.position - transform.position),
             rotSpeed * Time.deltaTime);
 
-
         if (Physics.Raycast(transform.position, transform.forward, out _rayHit) && _curCooldown <= 0)
         {
             FlyingSaucer enemy = _rayHit.collider.gameObject.GetComponent<FlyingSaucer>();
