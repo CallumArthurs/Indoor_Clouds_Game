@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class BuildingManager : MonoBehaviour {
     public GameObject[] Buildings = null;
-    public GameObject connector = null;
+    public GameObject connector = null, buildingInfoUI = null;
     public Text[] buildingUI = null;
     public Camera curCamera = null;
     public ResourceManager resourceManager = null;
-
+    public Canvas canvas = null;
 
     private enum enumBuildingID {turretID,powerPlantID,TransmitterID};
     private bool _placingBuilding, _placingConnector;
@@ -20,7 +20,9 @@ public class BuildingManager : MonoBehaviour {
     private Transmitter _connector;
     private List<Connector> connectors = new List<Connector>();
     private Text _Powered;
-    
+    private GameObject _buildinginfoUIText;
+
+
     void Start () {
 
     }
@@ -34,20 +36,18 @@ public class BuildingManager : MonoBehaviour {
         {
             BuildingConnector();
         }
-        
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    _ray = curCamera.ScreenPointToRay(Input.mousePosition);
-        //    if (Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Building non-collidables"))))
-        //    {
-        //        _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
-        //    }
-        //}
-        //else if(_selectedBuilding != null)
-        //{
-            
-        //}
+
+        if (Input.GetMouseButtonDown(0) && !(_placingBuilding || _placingConnector))
+        {
+            _ray = curCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(_ray, out _mousePos))
+            {
+                _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
+                UpdateInfoUI();
+            }
+        }
     }
+
     public void CreateBuilding (int BuildingID)
     {
         if (Building.cost[BuildingID] < resourceManager.money)
@@ -88,6 +88,7 @@ public class BuildingManager : MonoBehaviour {
 
             _curBuilding = null;
             _placingBuilding = false;
+            BlackBoard.buildings.Add(_curBuildingScript.gameObject);
             return;
         }
         else if (Input.GetMouseButton(1))
@@ -147,5 +148,21 @@ public class BuildingManager : MonoBehaviour {
                 connectors[i].ActivateRenderer(false);
             }
         }
+    }
+    private void UpdateInfoUI()
+    {
+        if (_buildinginfoUIText == null)
+        {
+            _buildinginfoUIText = Instantiate(buildingInfoUI, canvas.transform);
+
+            _ray = curCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(_ray, out _mousePos))
+            {
+                _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
+                _buildinginfoUIText.transform.position = _selectedBuilding.transform.position;
+
+            }
+        }
+        buildingInfoUI.GetComponentInChildren<Text>().text = "Powered " + _selectedBuilding.powered + "\nHello World";
     }
 }

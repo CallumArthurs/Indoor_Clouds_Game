@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour {
 
 	void Start () {
-		
+        Cursor.lockState = CursorLockMode.Confined;
 	}
 	
 	void Update () {

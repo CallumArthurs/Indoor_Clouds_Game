@@ -37,6 +37,24 @@ public class BlackBoard : MonoBehaviour {
 
         obj.target = _closestEnemy;
     }
+    public void RequestBuildingTargets(FlyingSaucer obj)
+    {
+        if (buildings == null)
+        {
+            return;
+        }
+        _closestEnemyDist = obj.range;
+        for (int i = 0; i < buildings.Count; i++)
+        {
+            if (((buildings[i].transform.position) - obj.transform.position).magnitude < _closestEnemyDist)
+            {
+                _closestEnemy = buildings[i];
+                _closestEnemyDist = ((buildings[i].transform.position) - obj.transform.position).magnitude;
+            }
+        }
+
+        obj.target = _closestEnemy;
+    }
     public void AddTarget(GameObject obj)
     {
         saucerTargets.Add(obj);
