@@ -27,7 +27,7 @@ public class HQ : MonoBehaviour {
         FlyingSaucer tempSaucer = other.gameObject.GetComponent<FlyingSaucer>();
         tempSaucer.DestroyMe();
     }
-
+    
     void UpdateHealth()
     {
         healthtxt.text = "Health: " + health.ToString();

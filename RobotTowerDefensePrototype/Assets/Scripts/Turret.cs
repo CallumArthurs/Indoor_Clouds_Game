@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : Building {
-    public GameObject target = null;
+    public GameObject target = null, nozzle;
     public BlackBoard blackBoard = null;
-    public float range = 20.0f, cooldown = 5.0f;
+    public float range = 20.0f, cooldown = 5.0f, rotSpeed = 5.0f;
     public int damage = 2, turretID = 0, pubCost = 50;
-    public bool connected;
 
     public static float modifier = 1;
     public static bool noElectricity = false;
     private RaycastHit _rayHit;
     private float _curCooldown;
-
     private void Awake()
     {
         cost[turretID] = pubCost;
@@ -43,25 +41,18 @@ public class Turret : Building {
 
     void TurretActivate()
     {
-        #region lerped lookat?
-        //Vector3 TargetPos = Targets[0].transform.position;
-        //float Angle = Vector3.Angle(transform.position, TargetPos);
-
-        //Debug.Log(Angle.ToString());
-
-        //if (transform.rotation.y == Angle)
-        //{
-        //    return;
-        //}
-        //transform.Rotate(transform.up, (Angle) * Time.deltaTime);
-        #endregion
         if ((target.transform.position - transform.position).magnitude > range)
         {
             target = null;
             return;
         }
-        transform.LookAt(target.transform);
-        if (Physics.Raycast(transform.position, transform.forward, out _rayHit) && _curCooldown <= 0)
+
+        nozzle.transform.rotation = 
+            Quaternion.Slerp(nozzle.transform.rotation, 
+            Quaternion.LookRotation(target.transform.position - nozzle.transform.position), 
+            rotSpeed * Time.deltaTime);
+
+        if (Physics.Raycast(nozzle.transform.position, nozzle.transform.forward, out _rayHit) && _curCooldown <= 0)
         {
             FlyingSaucer enemy = _rayHit.collider.gameObject.GetComponent<FlyingSaucer>();
             if (enemy == null)

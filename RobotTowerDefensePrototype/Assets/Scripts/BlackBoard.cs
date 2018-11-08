@@ -21,13 +21,35 @@ public class BlackBoard : MonoBehaviour {
     
     public void RequestTargets(Turret obj)
     {
+        if (saucerTargets == null)
+        {
+            return;
+        }
         _closestEnemyDist = obj.range;
         for (int i = 0; i < saucerTargets.Count; i++)
         {
-            if (((saucerTargets[i].transform.position) - HQ.transform.position).magnitude < _closestEnemyDist)
+            if (((saucerTargets[i].transform.position) - obj.transform.position).magnitude < _closestEnemyDist)
             {
                 _closestEnemy = saucerTargets[i];
-                _closestEnemyDist = ((saucerTargets[i].transform.position) - HQ.transform.position).magnitude;
+                _closestEnemyDist = ((saucerTargets[i].transform.position) - obj.transform.position).magnitude;
+            }
+        }
+
+        obj.target = _closestEnemy;
+    }
+    public void RequestBuildingTargets(FlyingSaucer obj)
+    {
+        if (buildings == null)
+        {
+            return;
+        }
+        _closestEnemyDist = obj.range;
+        for (int i = 0; i < buildings.Count; i++)
+        {
+            if (((buildings[i].transform.position) - obj.transform.position).magnitude < _closestEnemyDist)
+            {
+                _closestEnemy = buildings[i];
+                _closestEnemyDist = ((buildings[i].transform.position) - obj.transform.position).magnitude;
             }
         }
 
