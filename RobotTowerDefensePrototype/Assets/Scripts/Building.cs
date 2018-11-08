@@ -39,7 +39,7 @@ public class Building : MonoBehaviour {
         }
     }
 
-    public void DestroyMe()
+    public virtual void DestroyMe()
     {
         BlackBoard.buildings.Remove(gameObject);
         Destroy(gameObject);

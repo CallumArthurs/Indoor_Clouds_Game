@@ -13,14 +13,12 @@ public class BuildingManager : MonoBehaviour {
 
     private enum enumBuildingID {turretID,powerPlantID,TransmitterID};
     private bool _placingBuilding, _placingConnector;
-    private GameObject _curBuilding;
+    private GameObject _curBuilding, _buildinginfoUIText;
     private Ray _ray;
     private RaycastHit _mousePos;
     private Building _connection, _selectedBuilding;
     private Transmitter _connector;
     private List<Connector> connectors = new List<Connector>();
-    private Text _Powered;
-    private GameObject _buildinginfoUIText;
 
 
     void Start () {
@@ -43,12 +41,11 @@ public class BuildingManager : MonoBehaviour {
             if (Physics.Raycast(_ray, out _mousePos))
             {
                 _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
+                _buildinginfoUIText.transform.Translate(new Vector3(0, 0.5f));
             }
-
             UpdateInfoUI();
         }
 
-        
     }
 
     public void CreateBuilding (int BuildingID)

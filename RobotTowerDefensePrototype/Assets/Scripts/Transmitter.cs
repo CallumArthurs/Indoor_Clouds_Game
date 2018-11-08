@@ -12,8 +12,8 @@ public class Transmitter : Building {
 	void Update () {
 
 	}
-    
-    void DestroyMe()
+
+    public override void DestroyMe()
     {
         for (int i = 0; i < connections.Count - 1; i++)
         {

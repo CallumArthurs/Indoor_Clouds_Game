@@ -28,4 +28,8 @@ public class Connector : MonoBehaviour {
         Vector3[] temp = { firstConnection, secondConnection };
         renderer.SetPositions(temp);
     }
+    public void DestroyMe()
+    {
+
+    }
 }
