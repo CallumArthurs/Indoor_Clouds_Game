@@ -37,15 +37,18 @@ public class BuildingManager : MonoBehaviour {
             BuildingConnector();
         }
 
-        if (Input.GetMouseButtonDown(0) && !(_placingBuilding || _placingConnector))
+        if (Input.GetMouseButtonDown(0) && !(_placingBuilding || _placingConnector) && BlackBoard.buildings.Count > 0)
         {
             _ray = curCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(_ray, out _mousePos))
             {
                 _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
-                UpdateInfoUI();
             }
+
+            UpdateInfoUI();
         }
+
+        
     }
 
     public void CreateBuilding (int BuildingID)
@@ -154,14 +157,13 @@ public class BuildingManager : MonoBehaviour {
         if (_buildinginfoUIText == null)
         {
             _buildinginfoUIText = Instantiate(buildingInfoUI, canvas.transform);
+        }
 
-            _ray = curCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(_ray, out _mousePos))
-            {
-                _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
-                _buildinginfoUIText.transform.position = _selectedBuilding.transform.position;
-
-            }
+        _ray = curCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(_ray, out _mousePos))
+        {
+            _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
+            _buildinginfoUIText.transform.position = _selectedBuilding.transform.position;
         }
         buildingInfoUI.GetComponentInChildren<Text>().text = "Powered " + _selectedBuilding.powered + "\nHello World";
     }
