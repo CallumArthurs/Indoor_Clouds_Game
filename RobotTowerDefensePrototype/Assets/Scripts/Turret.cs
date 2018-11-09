@@ -8,7 +8,7 @@ public class Turret : Building {
     public float range = 20.0f, cooldown = 5.0f, rotSpeed = 5.0f;
     public int damage = 2, turretID = 0, pubCost = 50;
 
-    public static float modifier = 1;
+    public float modifier = 1;
     public static bool noElectricity = false;
     private RaycastHit _rayHit;
     private float _curCooldown;
