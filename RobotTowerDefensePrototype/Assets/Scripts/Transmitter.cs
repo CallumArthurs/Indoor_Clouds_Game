@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Transmitter : Building {
-    public int ConnectedPower = 0;
-
+    public PowerPlant ConnectedPlant;
 	void Start () {
 		
 	}
@@ -12,13 +11,14 @@ public class Transmitter : Building {
 	void Update () {
 
 	}
-    
-    void DestroyMe()
+    public override void DestroyMe()
     {
         for (int i = 0; i < connections.Count - 1; i++)
         {
             connections[i].ChangePowered(false);
         }
+        BlackBoard.buildings.Remove(gameObject);
+        Destroy(gameObject);
     }
 
     public void Connection(Building connectTo)
@@ -32,21 +32,23 @@ public class Transmitter : Building {
         else if (connectTo.powered)
         {
             powered = true;
-            //connectTo.GetComponent<PowerPlant>().generatedPower;
+            if (connectTo.GetComponent<PowerPlant>() != null)
+            {
+                ConnectedPlant = connectTo.GetComponent<PowerPlant>();
+                avaliablePower = ConnectedPlant.availablePower;
+            }
         }
     }
 
     public override void ChangePowered(bool value)
     {
         powered = value;
-        UpdatePower();
-    }
-    
-    private void UpdatePower()
-    {
         for (int i = 0; i < connections.Count - 1; i++)
         {
-            connections[i].ChangePowered(true);
+            if (!connections[i].powered)
+            {
+                connections[i].ChangePowered(true);
+            }
         }
-    }
+    }    
 }

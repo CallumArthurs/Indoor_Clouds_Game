@@ -10,17 +10,15 @@ public class BuildingManager : MonoBehaviour {
     public Camera curCamera = null;
     public ResourceManager resourceManager = null;
     public Canvas canvas = null;
+    public List<Connector> connectors = new List<Connector>();
 
     private enum enumBuildingID {turretID,powerPlantID,TransmitterID};
-    private bool _placingBuilding, _placingConnector;
-    private GameObject _curBuilding;
+    private bool _placingBuilding, _placingConnector, buildingMode;
+    private GameObject _curBuilding, _buildinginfoUIText;
     private Ray _ray;
     private RaycastHit _mousePos;
     private Building _connection, _selectedBuilding;
     private Transmitter _connector;
-    private List<Connector> connectors = new List<Connector>();
-    private Text _Powered;
-    private GameObject _buildinginfoUIText;
 
 
     void Start () {
@@ -28,27 +26,37 @@ public class BuildingManager : MonoBehaviour {
     }
 
     void Update() {
-        if (_curBuilding != null && _placingBuilding)
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            BuildingControls();
-        }
-        else if(_placingConnector)
-        {
-            BuildingConnector();
+            buildingMode = !buildingMode;
+            _buildinginfoUIText.gameObject.SetActive(false);
         }
 
-        if (Input.GetMouseButtonDown(0) && !(_placingBuilding || _placingConnector) && BlackBoard.buildings.Count > 0)
+        if (buildingMode)
         {
-            _ray = curCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(_ray, out _mousePos))
+            if (_curBuilding != null && _placingBuilding)
             {
-                _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
+                BuildingControls();
             }
-
-            UpdateInfoUI();
+            else if (_placingConnector)
+            {
+                BuildingConnector();
+            }
         }
-
-        
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                _ray = curCamera.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(_ray, out _mousePos))
+                {
+                    _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
+                    
+                }
+                UpdateInfoUI();
+            }
+            
+        }
     }
 
     public void CreateBuilding (int BuildingID)
@@ -82,7 +90,7 @@ public class BuildingManager : MonoBehaviour {
         {
             Building _curBuildingScript = _curBuilding.GetComponentInChildren<Building>();
             resourceManager.ChangeMoney(-Building.cost[_curBuildingScript.buildingID]);
-            resourceManager.ChangeElectricity(Building.electricityCost[_curBuildingScript.buildingID]);
+            //resourceManager.ChangeElectricity(Building.electricityCost[_curBuildingScript.buildingID]);
 
             if (_curBuildingScript.buildingID == (int)enumBuildingID.turretID)
             {
@@ -120,7 +128,7 @@ public class BuildingManager : MonoBehaviour {
             _ray = curCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(_ray, out _mousePos))
             {
-                if (_mousePos.collider.GetComponent<Transmitter>() != null)
+                if (_mousePos.collider.GetComponent<Transmitter>() != null && _connector == null)
                 {
                     _connector = _mousePos.collider.GetComponent<Transmitter>();
                 }
@@ -131,10 +139,10 @@ public class BuildingManager : MonoBehaviour {
                 if (_connection != null && _connector != null)
                 {
                     _connector.Connection(_connection);
-                    Connector tempConnector =Instantiate(connector, _connector.transform.position, _connector.transform.rotation).GetComponent<Connector>();
-                    tempConnector.firstConnection = _connector.transform.position;
-                    tempConnector.secondConnection = _connection.transform.position;
+                    Connector tempConnector = Instantiate(connector, _connector.transform.position, _connector.transform.rotation).GetComponent<Connector>();
+                    tempConnector.SetConnections(_connector, _connection);
                     connectors.Add(tempConnector);
+                    tempConnector.buildingManager = this;
                     _connection = null;
                     _connector = null;
                 }
@@ -158,13 +166,14 @@ public class BuildingManager : MonoBehaviour {
         {
             _buildinginfoUIText = Instantiate(buildingInfoUI, canvas.transform);
         }
-
+        _buildinginfoUIText.gameObject.SetActive(true);
         _ray = curCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(_ray, out _mousePos))
         {
             _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
             _buildinginfoUIText.transform.position = _selectedBuilding.transform.position;
+            _buildinginfoUIText.transform.Translate(new Vector3(1.0f, 2.0f));
         }
-        buildingInfoUI.GetComponentInChildren<Text>().text = "Powered " + _selectedBuilding.powered + "\nHello World";
+        buildingInfoUI.GetComponentInChildren<Text>().text = "Powered " + _selectedBuilding.powered + "\n avaliable electricty";
     }
 }
