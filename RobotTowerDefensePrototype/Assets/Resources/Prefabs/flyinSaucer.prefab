@@ -99,9 +99,13 @@ MonoBehaviour:
   path: []
   destination: {fileID: 0}
   speed: 1
+  range: 20
+  cooldown: 5
   health: 10
   worth: 10
-  particles: {fileID: 1573409169550558, guid: 95d011732cd336f47a0bf22c927e2ed3, type: 2}
+  damage: 2
+  particles: {fileID: 1492401909504364, guid: b84ac2a796781e549b184cb3fcba8916, type: 2}
+  target: {fileID: 0}
 --- !u!135 &135548925673060172
 SphereCollider:
   m_ObjectHideFlags: 1
