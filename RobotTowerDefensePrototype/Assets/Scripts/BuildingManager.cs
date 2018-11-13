@@ -29,7 +29,10 @@ public class BuildingManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.B))
         {
             buildingMode = !buildingMode;
-            _buildinginfoUIText.gameObject.SetActive(false);
+            if (_buildinginfoUIText != null)
+            {
+                _buildinginfoUIText.gameObject.SetActive(false);
+            }
         }
 
         if (buildingMode)
@@ -51,9 +54,11 @@ public class BuildingManager : MonoBehaviour {
                 if (Physics.Raycast(_ray, out _mousePos))
                 {
                     _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
-                    
+                    if (_selectedBuilding != null)
+                    {
+                        UpdateInfoUI();
+                    }
                 }
-                UpdateInfoUI();
             }
             
         }
