@@ -22,9 +22,14 @@ public class HQ : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        FlyingSaucer tempSaucer = other.gameObject.GetComponent<FlyingSaucer>();
+        if (tempSaucer == null)
+        {
+            return;
+        }
+
         health--;
         UpdateHealth();
-        FlyingSaucer tempSaucer = other.gameObject.GetComponent<FlyingSaucer>();
         tempSaucer.DestroyMe();
     }
     
