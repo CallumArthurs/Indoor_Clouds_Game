@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4727384714814376}
   - component: {fileID: 198229647098856500}
   - component: {fileID: 199531193538621402}
+  - component: {fileID: 114899081593464248}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -53,6 +54,7 @@ GameObject:
   - component: {fileID: 4805241583694872}
   - component: {fileID: 198447533364542884}
   - component: {fileID: 199661630415601660}
+  - component: {fileID: 114570453846595458}
   m_Layer: 0
   m_Name: HighRange
   m_TagString: Untagged
@@ -67,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1492401909504364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.8808365, y: 5.5256495, z: 6.483059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4805241583694872}
@@ -101,6 +103,28 @@ Transform:
   m_Father: {fileID: 4689454092459168}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &114570453846595458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978042968814042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf43ba02c2f5c541a1c6b0977b375ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114899081593464248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1478806909842238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf43ba02c2f5c541a1c6b0977b375ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198229647098856500
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -161,7 +185,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -517532076
+  randomSeed: 1456168775
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3522,7 +3546,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -183532817
+  randomSeed: -2020995247
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3966,8 +3990,8 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 8
-    angle: 25.929358
-    length: 4.044609
+    angle: 6.8774157
+    length: 4.678938
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
@@ -3987,7 +4011,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.19847393
+      value: 0.11908913
       mode: 0
       spread: 0
       speed:

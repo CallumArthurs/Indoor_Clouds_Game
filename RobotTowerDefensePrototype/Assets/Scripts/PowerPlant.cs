@@ -8,6 +8,7 @@ public class PowerPlant : Building {
 
     void Start () {
         powered = true;
+        powerSource = true;
 	}
 	
 	void Update () {

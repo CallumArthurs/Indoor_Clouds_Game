@@ -8,7 +8,8 @@ public class Building : MonoBehaviour {
     public List<Building> connections;
     public List<Connector> connectors = new List<Connector>();
     public int buildingID = 0, health = 20, avaliablePower = 0;
-    public bool powered = false;
+    public bool powered = false, powerSource = false;
+    public 
 
 
     void Start () {
@@ -21,29 +22,35 @@ public class Building : MonoBehaviour {
     public virtual void ChangePowered(bool value)
     {
         powered = value;
-        UpdatePower();
     }
 
     private void UpdatePower()
     {
-        for (int i = 0; i < connections.Count - 1; i++)
-        {
-            connections[i].ChangePowered(true);
-        }
+        ChangePowered(CheckPower());
     }
-    public void CheckPower()
+    public bool CheckPower()
     {
         for (int i = 0; i < connections.Count; i++)
         {
-            if (connections[i].powered)
+            if (connections[i].CheckPower())
             {
-                powered = true;
-                UpdatePower();
-                return;
+                return true;
             }
-            
         }
+        return false;
     }
+    //public void CheckPower()
+    //{
+    //    for (int i = 0; i < connections.Count; i++)
+    //    {
+    //        if (connections[i].powered)
+    //        {
+    //            powered = true;
+    //            UpdatePower();
+    //            return;
+    //        }
+    //    }
+    //}
     public virtual void TakeDamage(int Damage)
     {
         health -= Damage;

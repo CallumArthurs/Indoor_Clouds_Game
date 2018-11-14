@@ -257,6 +257,7 @@ MonoBehaviour:
   health: 50
   avaliablePower: 0
   powered: 0
+  powerSource: 0
   target: {fileID: 0}
   nozzle: {fileID: 1608655639676720}
   shootParticles: {fileID: 1290725643449872, guid: acc2246c04e648444b0bd1b361d70962,
@@ -265,7 +266,7 @@ MonoBehaviour:
   range: 50
   cooldown: 0.5
   rotSpeed: 5
-  damage: 5
+  damage: 2
   turretID: 0
   pubCost: 50
   modifier: 1

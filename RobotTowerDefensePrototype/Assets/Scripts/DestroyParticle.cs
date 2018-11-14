@@ -11,7 +11,6 @@ public class DestroyParticle : MonoBehaviour {
         p = GetComponent<ParticleSystem>();
     }
 
-    // Update is called once per frame
     void Update () {
 		if (!(p.IsAlive()))
         {

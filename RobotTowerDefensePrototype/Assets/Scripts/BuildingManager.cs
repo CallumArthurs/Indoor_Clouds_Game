@@ -95,7 +95,6 @@ public class BuildingManager : MonoBehaviour {
         {
             Building _curBuildingScript = _curBuilding.GetComponentInChildren<Building>();
             resourceManager.ChangeMoney(-Building.cost[_curBuildingScript.buildingID]);
-            //resourceManager.ChangeElectricity(Building.electricityCost[_curBuildingScript.buildingID]);
 
             if (_curBuildingScript.buildingID == (int)enumBuildingID.turretID)
             {

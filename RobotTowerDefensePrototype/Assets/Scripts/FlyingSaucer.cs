@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class FlyingSaucer : MonoBehaviour {
     public BlackBoard blackBoard = null;
@@ -12,6 +13,9 @@ public class FlyingSaucer : MonoBehaviour {
 
     private RaycastHit _rayHit;
     private float _curCooldown;
+    private int hoverNum;
+    private List<Vector3> hoverPath = new List<Vector3>();
+    private System.Random rnd = new System.Random();
     void Start () {
 		
 	}
@@ -53,7 +57,7 @@ public class FlyingSaucer : MonoBehaviour {
 
     public void FollowPath()
     {
-        transform.Translate((path[0].transform.position - gameObject.transform.position) * speed * Time.deltaTime);
+        transform.Translate((path[0].transform.position - gameObject.transform.position).normalized * speed * Time.deltaTime);
 
         if ((path[0].transform.position - gameObject.transform.position).magnitude < 2.0f)
         {
@@ -63,7 +67,16 @@ public class FlyingSaucer : MonoBehaviour {
 
     private void FindTargets()
     {
+        hoverPath.Clear();
         blackBoard.RequestBuildingTargets(this);
+        if (target == null)
+        {
+            return;
+        }
+        
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-4, 1), 4.0f, rnd.Next(-4, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1, 4), 5.0f, rnd.Next(-4, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 4.0f, rnd.Next(-4, 4)));
     }
 
     private void SaucerShoot()
@@ -73,6 +86,7 @@ public class FlyingSaucer : MonoBehaviour {
             target = null;
             return;
         }
+        Hover();
 
         if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _rayHit) && _curCooldown <= 0)
         {
@@ -83,6 +97,21 @@ public class FlyingSaucer : MonoBehaviour {
             }
             enemy.TakeDamage(damage);
             _curCooldown = cooldown;
+        }
+    }
+
+    private void Hover()
+    {
+        if (hoverNum > 2)
+        {
+            hoverNum = 0;
+        }
+
+        transform.Translate((hoverPath[hoverNum] - gameObject.transform.position).normalized * speed * Time.deltaTime);
+
+        if ((hoverPath[hoverNum] - gameObject.transform.position).magnitude < 1.0f)
+        {
+            hoverNum++;
         }
     }
 }
