@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 47a13e2533dd90a48be504c3dd14b739
-timeCreated: 1542171737
+guid: 518035d4e5db34944af520c7a50f04ff
+timeCreated: 1542241906
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -135,9 +135,13 @@ ModelImporter:
     400124: Torso1
     400126: Tread
     400128: Treads
-    2100000: lambert1
-    2100002: TankTreadsLeft
-    2100004: TankTreadsRight
+    2100000: Chest
+    2100002: LowerBody
+    2100004: Arms
+    2100006: TankTreadsLeft
+    2100008: Wheels
+    2100010: TankTreadsRight
+    2100012: TeslaCoils
     2300000: Body1
     2300002: L_Elbow
     2300004: L_LowerArm
@@ -168,7 +172,6 @@ ModelImporter:
     2300054: TeslaCoil7
     2300056: TeslaCoil8
     2300058: Torso1
-    2300060: Tread
     3300000: Body1
     3300002: L_Elbow
     3300004: L_LowerArm
@@ -199,40 +202,73 @@ ModelImporter:
     3300054: TeslaCoil7
     3300056: TeslaCoil8
     3300058: Torso1
-    3300060: Tread
-    4300000: Tread
-    4300002: Torso1
-    4300004: Body1
-    4300006: R_Minigun1
-    4300008: R_Shoulder
-    4300010: R_UpperArm
-    4300012: R_Elbow
-    4300014: R_LowerArm
-    4300016: R_MinigunHolder
-    4300018: L_Shoulder
-    4300020: L_UpperArm
-    4300022: L_LowerArm
-    4300024: L_Elbow
-    4300026: L_MinigunHolder
-    4300028: L_Minigun
-    4300030: R_Elbow1
-    4300032: R_LowerArm1
-    4300034: R_UpperArm1
-    4300036: M_Minigun2
-    4300038: M_MinigunHolder
-    4300040: M_Shoulder1
-    4300042: L_Treads
-    4300044: R_Treads
-    4300046: TeslaCoil1
-    4300048: TeslaCoil2
-    4300050: TeslaCoil3
-    4300052: TeslaCoil4
-    4300054: TeslaCoil5
-    4300056: TeslaCoil6
-    4300058: TeslaCoil7
-    4300060: TeslaCoil8
+    4300000: Torso1
+    4300002: Body1
+    4300004: R_Minigun1
+    4300006: R_Shoulder
+    4300008: R_UpperArm
+    4300010: R_Elbow
+    4300012: R_LowerArm
+    4300014: R_MinigunHolder
+    4300016: L_Shoulder
+    4300018: L_UpperArm
+    4300020: L_LowerArm
+    4300022: L_Elbow
+    4300024: L_MinigunHolder
+    4300026: L_Minigun
+    4300028: R_Elbow1
+    4300030: R_LowerArm1
+    4300032: R_UpperArm1
+    4300034: M_Minigun2
+    4300036: M_MinigunHolder
+    4300038: M_Shoulder1
+    4300040: L_Treads
+    4300042: R_Treads
+    4300044: TeslaCoil1
+    4300046: TeslaCoil2
+    4300048: TeslaCoil3
+    4300050: TeslaCoil4
+    4300052: TeslaCoil5
+    4300054: TeslaCoil6
+    4300056: TeslaCoil7
+    4300058: TeslaCoil8
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arms
+    second: {fileID: 2100000, guid: cfbdb0f75cb986f4cb53c836b0bdcc63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest
+    second: {fileID: 2100000, guid: d4f16038434472149ab0d5de8ea3c5d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LowerBody
+    second: {fileID: 2100000, guid: 057631863e3d7414ab69b6f7151a21eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TankTreadsLeft
+    second: {fileID: 2100000, guid: 53d5f7104b97edc4eb56eda3cdc84316, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TankTreadsRight
+    second: {fileID: 2100000, guid: ff83850e842d4f842a1767bda4c7b9c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TeslaCoils
+    second: {fileID: 2100000, guid: 8228596083beabe4dac31cf3debfea41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheels
+    second: {fileID: 2100000, guid: e89c961523f717143a1f41eff3039ce2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -262,7 +298,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 80
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -300,7 +336,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: root_RobotH
+    rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0

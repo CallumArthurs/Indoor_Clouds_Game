@@ -60,8 +60,11 @@ public class Turret : Building {
                 return;
             }
             Instantiate(shootParticles, nozzle.transform);
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
 
-            enemy.TakeDamage(damage);
+            }
             _curCooldown = cooldown * modifier;
         }
     }

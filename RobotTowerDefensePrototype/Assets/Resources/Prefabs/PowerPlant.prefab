@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 65591632055965942}
   m_Layer: 9
   m_Name: PowerPlant
-  m_TagString: Untagged
+  m_TagString: PowerPlant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,9 +252,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
+  connectors: []
   buildingID: 0
-  active: 0
+  health: 20
+  avaliablePower: 0
   powered: 0
+  powerSource: 0
   resourceManager: {fileID: 0}
-  generatedPower: 10
+  availablePower: 10
   pubCost: 50

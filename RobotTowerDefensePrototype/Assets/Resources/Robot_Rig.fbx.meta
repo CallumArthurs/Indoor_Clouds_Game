@@ -1,0 +1,345 @@
+fileFormatVersion: 2
+guid: 76b9b58161b10874db04ac201bded62f
+timeCreated: 1542240664
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_R
+    100004: Body
+    100006: Bowtie
+    100008: CTRL_Antenna_1
+    100010: CTRL_Antenna_2
+    100012: CTRL_Antenna_3
+    100014: CTRL_Antenna_4
+    100016: CTRL_arm_2_L
+    100018: CTRL_arm_2_R
+    100020: CTRL_arm_3_L
+    100022: CTRL_arm_3_R
+    100024: CTRL_Bowtie
+    100026: CTRL_Elbow_L
+    100028: CTRL_Elbow_R
+    100030: CTRL_Hand_L
+    100032: CTRL_Hand_R
+    100034: CTRL_Head
+    100036: CTRL_Laser
+    100038: CTRL_Leg
+    100040: CTRL_Master
+    100042: CTRL_Neck
+    100044: CTRL_ROOT
+    100046: CTRL_Shoulder_L
+    100048: CTRL_Shoulder_R
+    100050: CTRL_Spine
+    100052: CTRL_Waist
+    100054: CTRL_Wheel
+    100056: CTRL_Wrist_L
+    100058: CTRL_Wrist_R
+    100060: Elbow_L
+    100062: Elbow_R
+    100064: Hand_L
+    100066: Hand_L 1
+    100068: Hand_R
+    100070: Hand_R 1
+    100072: Head
+    100074: JNT_Antenna_1
+    100076: JNT_Antenna_2
+    100078: JNT_Antenna_3
+    100080: JNT_Antenna_4
+    100082: JNT_Bowtie
+    100084: JNT_Clavicle_L
+    100086: JNT_Clavicle_R
+    100088: JNT_Head
+    100090: JNT_Laser
+    100092: JNT_Leg
+    100094: JNT_Neck
+    100096: JNT_ROOT
+    100098: JNT_Shoulder_L
+    100100: JNT_Shoulder_R
+    100102: JNT_Spine
+    100104: JNT_Waist
+    100106: JNT_Wheel
+    100108: joint1
+    100110: joint2
+    100112: joint3
+    100114: joint4
+    100116: joint6
+    100118: joint7
+    100120: joint8
+    100122: Laser
+    100124: ROBOT
+    100126: //RootNode
+    100128: Shoulder_L
+    100130: Shoulder_R
+    100132: wheel
+    100134: Wheel_Support
+    100136: Wrist_L
+    100138: Wrist_L 1
+    100140: Wrist_R
+    100142: Wrist_R 1
+    400000: Arm_L
+    400002: Arm_R
+    400004: Body
+    400006: Bowtie
+    400008: CTRL_Antenna_1
+    400010: CTRL_Antenna_2
+    400012: CTRL_Antenna_3
+    400014: CTRL_Antenna_4
+    400016: CTRL_arm_2_L
+    400018: CTRL_arm_2_R
+    400020: CTRL_arm_3_L
+    400022: CTRL_arm_3_R
+    400024: CTRL_Bowtie
+    400026: CTRL_Elbow_L
+    400028: CTRL_Elbow_R
+    400030: CTRL_Hand_L
+    400032: CTRL_Hand_R
+    400034: CTRL_Head
+    400036: CTRL_Laser
+    400038: CTRL_Leg
+    400040: CTRL_Master
+    400042: CTRL_Neck
+    400044: CTRL_ROOT
+    400046: CTRL_Shoulder_L
+    400048: CTRL_Shoulder_R
+    400050: CTRL_Spine
+    400052: CTRL_Waist
+    400054: CTRL_Wheel
+    400056: CTRL_Wrist_L
+    400058: CTRL_Wrist_R
+    400060: Elbow_L
+    400062: Elbow_R
+    400064: Hand_L
+    400066: Hand_L 1
+    400068: Hand_R
+    400070: Hand_R 1
+    400072: Head
+    400074: JNT_Antenna_1
+    400076: JNT_Antenna_2
+    400078: JNT_Antenna_3
+    400080: JNT_Antenna_4
+    400082: JNT_Bowtie
+    400084: JNT_Clavicle_L
+    400086: JNT_Clavicle_R
+    400088: JNT_Head
+    400090: JNT_Laser
+    400092: JNT_Leg
+    400094: JNT_Neck
+    400096: JNT_ROOT
+    400098: JNT_Shoulder_L
+    400100: JNT_Shoulder_R
+    400102: JNT_Spine
+    400104: JNT_Waist
+    400106: JNT_Wheel
+    400108: joint1
+    400110: joint2
+    400112: joint3
+    400114: joint4
+    400116: joint6
+    400118: joint7
+    400120: joint8
+    400122: Laser
+    400124: ROBOT
+    400126: //RootNode
+    400128: Shoulder_L
+    400130: Shoulder_R
+    400132: wheel
+    400134: Wheel_Support
+    400136: Wrist_L
+    400138: Wrist_L 1
+    400140: Wrist_R
+    400142: Wrist_R 1
+    2100000: HEAD
+    2100002: LASER
+    2100004: BOWTIE
+    2100006: BODY
+    2100008: SHOULDER_R1
+    2100010: WRIST_R
+    2100012: ARM_R
+    2100014: HAND_R
+    2100016: SHOULDER_L
+    2100018: ARM_L
+    2100020: WRIST_L
+    2100022: HAND_L
+    2100024: LEG
+    2100026: WHEEL
+    4300000: Head
+    4300002: Laser
+    4300004: Bowtie
+    4300006: Body
+    4300008: Shoulder_R
+    4300010: Wrist_R
+    4300012: Arm_R
+    4300014: Hand_R
+    4300016: Shoulder_L
+    4300018: Arm_L
+    4300020: Wrist_L
+    4300022: Hand_L
+    4300024: Wheel_Support
+    4300026: wheel
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Arm_L
+    13700002: Arm_R
+    13700004: Body
+    13700006: Bowtie
+    13700008: Hand_L
+    13700010: Hand_R
+    13700012: Head
+    13700014: Laser
+    13700016: Shoulder_L
+    13700018: Shoulder_R
+    13700020: wheel
+    13700022: Wheel_Support
+    13700024: Wrist_L
+    13700026: Wrist_R
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ARM_L
+    second: {fileID: 2100000, guid: db6c418757de3654488faf21c71a9964, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ARM_R
+    second: {fileID: 2100000, guid: 0ebf58477eb04b849914e643c40a8bb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BODY
+    second: {fileID: 2100000, guid: ad548af3fc6f70e4790cae6dfa166b6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BOWTIE
+    second: {fileID: 2100000, guid: b2c984c9a5a556e48ba7aa36cdc28a8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HAND_L
+    second: {fileID: 2100000, guid: f07465728b40de34388c0122e98547bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HAND_R
+    second: {fileID: 2100000, guid: 0782183c661a56345b2631298a77a542, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HEAD
+    second: {fileID: 2100000, guid: 8275c9b20aa08f2468ea354c28d827ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LASER
+    second: {fileID: 2100000, guid: 80da5c7a70349ff49a83612de5b99d25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LEG
+    second: {fileID: 2100000, guid: 6f763bc5954e6374bb131b06f4d96cfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SHOULDER_L
+    second: {fileID: 2100000, guid: 55ee7df6b6ff1ae47ab6e7570c9c6f70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SHOULDER_R1
+    second: {fileID: 2100000, guid: 3e3951ea8b3f6b744a45d2bdb8eb204f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WHEEL
+    second: {fileID: 2100000, guid: 05f0c7b7220fddd46b712246ebbaeb0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WRIST_L
+    second: {fileID: 2100000, guid: d83e8011fcf96df42b4cbeeb5f50ee11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WRIST_R
+    second: {fileID: 2100000, guid: 3cc57f23adaf0b543ba013a1900452bc, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

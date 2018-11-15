@@ -91,7 +91,7 @@ public class BuildingManager : MonoBehaviour {
     private void BuildingControls()
     {
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Building non-collidables"))))
         {
             Building _curBuildingScript = _curBuilding.GetComponentInChildren<Building>();
             resourceManager.ChangeMoney(-Building.cost[_curBuildingScript.buildingID]);

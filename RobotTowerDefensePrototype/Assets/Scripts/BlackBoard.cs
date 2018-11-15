@@ -5,7 +5,6 @@ using UnityEngine;
 public class BlackBoard : MonoBehaviour {
     public static List<GameObject> saucerTargets = new List<GameObject>();
     public static List<GameObject> buildings = new List<GameObject>();
-
     public GameObject HQ = null;
     public ResourceManager resourceManager = null;
 

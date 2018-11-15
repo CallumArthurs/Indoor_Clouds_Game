@@ -55,17 +55,7 @@ public class FlyingSaucer : MonoBehaviour {
 
     }
 
-    public void FollowPath()
-    {
-        transform.Translate((path[0].transform.position - gameObject.transform.position).normalized * speed * Time.deltaTime);
-
-        if ((path[0].transform.position - gameObject.transform.position).magnitude < 2.0f)
-        {
-            path.RemoveAt(0);
-        }
-    }
-
-    private void FindTargets()
+    virtual public void FindTargets()
     {
         hoverPath.Clear();
         blackBoard.RequestBuildingTargets(this);
@@ -74,9 +64,19 @@ public class FlyingSaucer : MonoBehaviour {
             return;
         }
         
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-4, 1), 4.0f, rnd.Next(-4, 4)));
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1, 4), 5.0f, rnd.Next(-4, 4)));
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 4.0f, rnd.Next(-4, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-4, 1), 4.0f, rnd.Next(1, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1, 4), 5.0f, rnd.Next(-1, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 4.0f, rnd.Next(-2, 4)));
+    }
+
+    private void FollowPath()
+    {
+        transform.Translate((path[0].transform.position - gameObject.transform.position).normalized * speed * Time.deltaTime);
+
+        if ((path[0].transform.position - gameObject.transform.position).magnitude < 2.0f)
+        {
+            path.RemoveAt(0);
+        }
     }
 
     private void SaucerShoot()

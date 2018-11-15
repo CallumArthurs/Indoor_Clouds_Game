@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public List<GameObject> 
 public class UIManager : MonoBehaviour {
+    public List<GameObject> UIPrefabs;
 
-	void Start () {
+    void Start () {
 		
 	}
 	
