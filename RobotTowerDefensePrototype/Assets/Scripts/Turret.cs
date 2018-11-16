@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : Building {
-    public GameObject target = null, nozzle;
+    public GameObject target = null, nozzle, shootParticles;
     public BlackBoard blackBoard = null;
     public float range = 20.0f, cooldown = 5.0f, rotSpeed = 5.0f;
     public int damage = 2, turretID = 0, pubCost = 50;
@@ -59,7 +59,12 @@ public class Turret : Building {
             {
                 return;
             }
-            enemy.TakeDamage(damage);
+            Instantiate(shootParticles, nozzle.transform);
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+
+            }
             _curCooldown = cooldown * modifier;
         }
     }

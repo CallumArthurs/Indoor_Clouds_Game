@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: c49f5c1d5512ec6428b98b070a540a62
+timeCreated: 1542158220
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: b_arm1
+    100002: b_arm2
+    100004: b_arm3
+    100006: b_minigun
+    100008: b_shoulder
+    100010: Body1
+    100012: Chest
+    100014: L_Arm
+    100016: l_arm1
+    100018: l_arm2
+    100020: L_arm4
+    100022: l_arm_3
+    100024: L_Elbow
+    100026: L_Elbow 1
+    100028: L_LowerArm
+    100030: L_Minigun
+    100032: l_minigun
+    100034: L_MinigunHolder
+    100036: L_Shoulder
+    100038: l_shoulder
+    100040: L_Shoulder 1
+    100042: L_tanktreads
+    100044: l_teslacoil
+    100046: L_Treads
+    100048: L_UpperArm
+    100050: M_Arm2
+    100052: M_Elbow
+    100054: M_minigun
+    100056: M_Minigun2
+    100058: M_MinigunHolder
+    100060: M_Shoulder
+    100062: M_Shoulder1
+    100064: Mesh
+    100066: R_Arm
+    100068: r_arm1
+    100070: r_arm2
+    100072: r_arm_3
+    100074: R_Elbow
+    100076: R_Elbow 1
+    100078: R_Elbow1
+    100080: R_LowerArm
+    100082: R_LowerArm1
+    100084: r_minigun
+    100086: R_Minigun1
+    100088: R_minigun_
+    100090: R_MinigunHolder
+    100092: R_Shoulder
+    100094: r_shoulder
+    100096: R_Shoulder 1
+    100098: R_tanktreads
+    100100: r_teslacoil
+    100102: R_Treads
+    100104: R_UpperArm
+    100106: R_UpperArm1
+    100108: root_RobotH
+    100110: RootController
+    100112: ShamrockBot
+    100114: //RootNode
+    100116: TankBody
+    100118: TeslaCoil1
+    100120: Teslacoil1
+    100122: TeslaCoil2
+    100124: Teslacoil2
+    100126: TeslaCoil3
+    100128: Teslacoil3
+    100130: TeslaCoil4
+    100132: Teslacoil4
+    100134: TeslaCoil5
+    100136: TeslaCoil6
+    100138: TeslaCoil7
+    100140: TeslaCoil8
+    100142: Tier2
+    100144: Torso
+    100146: Torso1
+    100148: Tread
+    100150: Treads
+    400000: b_arm1
+    400002: b_arm2
+    400004: b_arm3
+    400006: b_minigun
+    400008: b_shoulder
+    400010: Body1
+    400012: Chest
+    400014: L_Arm
+    400016: l_arm1
+    400018: l_arm2
+    400020: L_arm4
+    400022: l_arm_3
+    400024: L_Elbow
+    400026: L_Elbow 1
+    400028: L_LowerArm
+    400030: L_Minigun
+    400032: l_minigun
+    400034: L_MinigunHolder
+    400036: L_Shoulder
+    400038: l_shoulder
+    400040: L_Shoulder 1
+    400042: L_tanktreads
+    400044: l_teslacoil
+    400046: L_Treads
+    400048: L_UpperArm
+    400050: M_Arm2
+    400052: M_Elbow
+    400054: M_minigun
+    400056: M_Minigun2
+    400058: M_MinigunHolder
+    400060: M_Shoulder
+    400062: M_Shoulder1
+    400064: Mesh
+    400066: R_Arm
+    400068: r_arm1
+    400070: r_arm2
+    400072: r_arm_3
+    400074: R_Elbow
+    400076: R_Elbow 1
+    400078: R_Elbow1
+    400080: R_LowerArm
+    400082: R_LowerArm1
+    400084: r_minigun
+    400086: R_Minigun1
+    400088: R_minigun_
+    400090: R_MinigunHolder
+    400092: R_Shoulder
+    400094: r_shoulder
+    400096: R_Shoulder 1
+    400098: R_tanktreads
+    400100: r_teslacoil
+    400102: R_Treads
+    400104: R_UpperArm
+    400106: R_UpperArm1
+    400108: root_RobotH
+    400110: RootController
+    400112: ShamrockBot
+    400114: //RootNode
+    400116: TankBody
+    400118: TeslaCoil1
+    400120: Teslacoil1
+    400122: TeslaCoil2
+    400124: Teslacoil2
+    400126: TeslaCoil3
+    400128: Teslacoil3
+    400130: TeslaCoil4
+    400132: Teslacoil4
+    400134: TeslaCoil5
+    400136: TeslaCoil6
+    400138: TeslaCoil7
+    400140: TeslaCoil8
+    400142: Tier2
+    400144: Torso
+    400146: Torso1
+    400148: Tread
+    400150: Treads
+    2100000: lambert1
+    2100002: TankTreadsLeft
+    2100004: TankTreadsRight
+    2300000: Tread
+    3300000: Tread
+    4300000: Tread
+    4300002: Torso1
+    4300004: Body1
+    4300006: R_Minigun1
+    4300008: R_Shoulder
+    4300010: R_UpperArm
+    4300012: R_Elbow
+    4300014: R_LowerArm
+    4300016: R_MinigunHolder
+    4300018: L_Shoulder
+    4300020: L_UpperArm
+    4300022: L_LowerArm
+    4300024: L_Elbow
+    4300026: L_MinigunHolder
+    4300028: L_Minigun
+    4300030: R_Elbow1
+    4300032: R_LowerArm1
+    4300034: R_UpperArm1
+    4300036: M_Minigun2
+    4300038: M_MinigunHolder
+    4300040: M_Shoulder1
+    4300042: L_Treads
+    4300044: R_Treads
+    4300046: TeslaCoil1
+    4300048: TeslaCoil2
+    4300050: TeslaCoil3
+    4300052: TeslaCoil4
+    4300054: TeslaCoil5
+    4300056: TeslaCoil6
+    4300058: TeslaCoil7
+    4300060: TeslaCoil8
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Body1
+    13700002: L_Elbow
+    13700004: L_LowerArm
+    13700006: L_Minigun
+    13700008: L_MinigunHolder
+    13700010: L_Shoulder 1
+    13700012: L_Treads
+    13700014: L_UpperArm
+    13700016: M_Minigun2
+    13700018: M_MinigunHolder
+    13700020: M_Shoulder1
+    13700022: R_Elbow
+    13700024: R_Elbow1
+    13700026: R_LowerArm
+    13700028: R_LowerArm1
+    13700030: R_Minigun1
+    13700032: R_MinigunHolder
+    13700034: R_Shoulder 1
+    13700036: R_Treads
+    13700038: R_UpperArm
+    13700040: R_UpperArm1
+    13700042: TeslaCoil1
+    13700044: TeslaCoil2
+    13700046: TeslaCoil3
+    13700048: TeslaCoil4
+    13700050: TeslaCoil5
+    13700052: TeslaCoil6
+    13700054: TeslaCoil7
+    13700056: TeslaCoil8
+    13700058: Torso1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

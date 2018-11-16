@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Transmitter : Building {
-    public PowerPlant ConnectedPlant;
+
 	void Start () {
 		
 	}
@@ -32,10 +32,9 @@ public class Transmitter : Building {
         else if (connectTo.powered)
         {
             powered = true;
-            if (connectTo.GetComponent<PowerPlant>() != null)
+            if (connectTo.powerSource)
             {
-                ConnectedPlant = connectTo.GetComponent<PowerPlant>();
-                avaliablePower = ConnectedPlant.availablePower;
+                avaliablePower = connectTo.GetComponent<PowerPlant>().availablePower;
             }
         }
     }
