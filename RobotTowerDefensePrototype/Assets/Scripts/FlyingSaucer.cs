@@ -21,6 +21,7 @@ public class FlyingSaucer : MonoBehaviour {
 	}
 	
 	void Update () {
+        //logic below : saucer has a target shoot at the saucer, then if it has a path avaliable to it follow it, then add the HQ as a path and find a target
         if (target != null)
         {
             SaucerShoot();
@@ -34,6 +35,7 @@ public class FlyingSaucer : MonoBehaviour {
             path.Add(destination.gameObject);
             FindTargets();
         }
+        //shooting cooldown
         _curCooldown -= Time.deltaTime;
     }
 
@@ -49,30 +51,32 @@ public class FlyingSaucer : MonoBehaviour {
 
     public void DestroyMe()
     {
+        //spawn the saucer's death particle effect
         Instantiate(particles, transform.position, transform.rotation);
+        //remove itself from the blackboard
         BlackBoard.saucerTargets.Remove(gameObject);
         Destroy(gameObject);
-
     }
 
     virtual public void FindTargets()
     {
-        hoverPath.Clear();
+        //get target from the blackboard and set up a random hover pattern above the target
         blackBoard.RequestBuildingTargets(this);
         if (target == null)
         {
             return;
         }
-        
+        hoverPath.Clear();
         hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-4, 1), 4.0f, rnd.Next(1, 4)));
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1, 4), 5.0f, rnd.Next(-1, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1, 4), 4.0f, rnd.Next(-1, 4)));
         hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 4.0f, rnd.Next(-2, 4)));
     }
 
     private void FollowPath()
     {
+        //moving through the path in it's list
         transform.Translate((path[0].transform.position - gameObject.transform.position).normalized * speed * Time.deltaTime);
-
+        //remove the path node from the list if the saucer is close enough to it
         if ((path[0].transform.position - gameObject.transform.position).magnitude < 2.0f)
         {
             path.RemoveAt(0);
@@ -81,13 +85,15 @@ public class FlyingSaucer : MonoBehaviour {
 
     private void SaucerShoot()
     {
+        //target out of it's range make it null
         if ((target.transform.position - transform.position).magnitude > range)
         {
             target = null;
             return;
         }
+        //make the hovering above the enemy
         Hover();
-
+        //raycast to get the enemy and make the enemy take damage
         if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _rayHit) && _curCooldown <= 0)
         {
             Building enemy = _rayHit.collider.gameObject.GetComponent<Building>();
@@ -99,7 +105,7 @@ public class FlyingSaucer : MonoBehaviour {
             _curCooldown = cooldown;
         }
     }
-
+    //moving through the hover pattern for each enemy
     private void Hover()
     {
         if (hoverNum > 2)
@@ -108,7 +114,7 @@ public class FlyingSaucer : MonoBehaviour {
         }
 
         transform.Translate((hoverPath[hoverNum] - gameObject.transform.position).normalized * speed * Time.deltaTime);
-
+        //move on to the next hover node if the saucer is close enough to it
         if ((hoverPath[hoverNum] - gameObject.transform.position).magnitude < 1.0f)
         {
             hoverNum++;

@@ -26,6 +26,7 @@ public class BuildingManager : MonoBehaviour {
     }
 
     void Update() {
+        //pressing "B" will take you into building mode as to not accidently open up info panels
         if (Input.GetKeyDown(KeyCode.B))
         {
             buildingMode = !buildingMode;
@@ -34,7 +35,7 @@ public class BuildingManager : MonoBehaviour {
                 _buildinginfoUIText.gameObject.SetActive(false);
             }
         }
-
+        //run the different controls depending on if you are making a building or a connector
         if (buildingMode)
         {
             if (_curBuilding != null && _placingBuilding)
@@ -48,6 +49,7 @@ public class BuildingManager : MonoBehaviour {
         }
         else
         {
+            //if you click on a building bring up the info panel on it
             if (Input.GetMouseButtonDown(0))
             {
                 _ray = curCamera.ScreenPointToRay(Input.mousePosition);
@@ -64,6 +66,7 @@ public class BuildingManager : MonoBehaviour {
         }
     }
 
+    //check if the player has enough money for the building make the building and make it follow the mouse postion in the world
     public void CreateBuilding (int BuildingID)
     {
         if (Building.cost[BuildingID] < resourceManager.money)
@@ -76,36 +79,41 @@ public class BuildingManager : MonoBehaviour {
 
         UpdateBuildCosts();
     }
+    //make the connector run the building controls for it
     public void ConnectorCreate()
     {
         _placingConnector = true;
         UpdateBuildCosts();
     }
+    //make sure the turret costs are up to date
     public void UpdateBuildCosts()
     {
         for(int i = 0; i < buildingUI.Length; i++)
         {
-            buildingUI[i].text ="Turret" + i.ToString() + " $" + Turret.cost[i];
+            buildingUI[i].text ="Turret" + i.ToString() + " $ " + Turret.cost[i + 1];
         }
     }
+    //building controls for all regular buildings
     private void BuildingControls()
     {
-        
+        //left clicking will place down the building but only if the raycast hits something collideable
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Building non-collidables"))))
         {
+            //take away the cost from the money of the player
             Building _curBuildingScript = _curBuilding.GetComponentInChildren<Building>();
             resourceManager.ChangeMoney(-Building.cost[_curBuildingScript.buildingID]);
-
             if (_curBuildingScript.buildingID == (int)enumBuildingID.turretID)
             {
+
                 resourceManager.turrets.Add((Turret)_curBuildingScript);
             }
-
+            //add the building to the blackboard and turn off placement mode
             _curBuilding = null;
             _placingBuilding = false;
             BlackBoard.buildings.Add(_curBuildingScript.gameObject);
             return;
         }
+        //get rid of the building if the player right clicks
         else if (Input.GetMouseButton(1))
         {
             Destroy(_curBuilding);
@@ -113,7 +121,7 @@ public class BuildingManager : MonoBehaviour {
             _placingBuilding = false;
             return;
         }
-
+        //move the building to the players mouse position
         _ray = curCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Building non-collidables"))))
         {
@@ -121,8 +129,10 @@ public class BuildingManager : MonoBehaviour {
             _curBuilding.transform.Translate(new Vector3(0, 0.5f, 0));
         }
     }
+    //building controls for the connector tool
     private void BuildingConnector()
     {
+        //if there are connectors already make them visable to the player
         for (int i = 0; i < connectors.Count; i++)
         {
             connectors[i].ActivateRenderer(true);
@@ -132,6 +142,7 @@ public class BuildingManager : MonoBehaviour {
             _ray = curCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(_ray, out _mousePos))
             {
+                //selects one transmittor and a building has to be one transmittor to a building, transmittors are also buildings so you can connect one transmittor to another
                 if (_mousePos.collider.GetComponent<Transmitter>() != null && _connector == null)
                 {
                     _connector = _mousePos.collider.GetComponent<Transmitter>();
@@ -142,9 +153,10 @@ public class BuildingManager : MonoBehaviour {
                 }
                 if (_connection != null && _connector != null)
                 {
-                    _connector.Connection(_connection);
+                    //connect the buildings and make a linerender object to make a line between
                     Connector tempConnector = Instantiate(connector, _connector.transform.position, _connector.transform.rotation).GetComponent<Connector>();
                     tempConnector.SetConnections(_connector, _connection);
+                    _connector.Connection(_connection);
                     connectors.Add(tempConnector);
                     tempConnector.buildingManager = this;
                     _connection = null;
@@ -152,6 +164,7 @@ public class BuildingManager : MonoBehaviour {
                 }
             }
         }
+        //cancel making a connector
         if (Input.GetMouseButtonDown(1))
         {
             _connection = null;
@@ -164,20 +177,25 @@ public class BuildingManager : MonoBehaviour {
             }
         }
     }
+    //InfoUI update or make a new infopanel
     private void UpdateInfoUI()
     {
+        //if the object doesn't exist make it
         if (_buildinginfoUIText == null)
         {
             _buildinginfoUIText = Instantiate(buildingInfoUI, canvas.transform);
         }
+        //make it active if it does exist
         _buildinginfoUIText.gameObject.SetActive(true);
         _ray = curCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(_ray, out _mousePos))
         {
+            //get the building at the raycast position
             _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
             _buildinginfoUIText.transform.position = _selectedBuilding.transform.position;
             _buildinginfoUIText.transform.Translate(new Vector3(1.0f, 2.0f));
         }
+        //set the text inside to give information about the building
         buildingInfoUI.GetComponentInChildren<Text>().text = "Powered " + _selectedBuilding.powered + "\n avaliable electricty";
     }
 }

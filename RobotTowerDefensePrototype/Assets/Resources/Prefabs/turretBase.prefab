@@ -253,10 +253,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections: []
   connectors: []
+  powersources: []
   buildingID: 0
   health: 50
   avaliablePower: 0
-  powered: 1
+  powered: 0
   powerSource: 0
   target: {fileID: 0}
   nozzle: {fileID: 1608655639676720}

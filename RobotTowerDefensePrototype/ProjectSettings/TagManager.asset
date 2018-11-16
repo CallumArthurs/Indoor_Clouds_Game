@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BlackBoard
   - PowerPlant
+  - HeadQuaters
   layers:
   - Default
   - TransparentFX
