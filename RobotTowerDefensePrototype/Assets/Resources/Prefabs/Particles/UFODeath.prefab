@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4689454092459168}
   m_Layer: 0
-  m_Name: ExplosionParticlePrefab
+  m_Name: UFODeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3505,7 +3505,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.4
+    scalar: 0.1
     minScalar: 0
     maxCurve:
       serializedVersion: 2
