@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Building : MonoBehaviour {
-    public static int[] electricityCost = {-10, 20, 0};
-    public static int[] cost = {50, 100, 20};
+    public static int[] electricityCost = {-10, 20, 0, 0};
+    public static int[] cost = {50, 100, 20, 50};
     public List<Building> connections;
     public List<Connector> connectors = new List<Connector>();
     public List<PowerPlant> powersources;

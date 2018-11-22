@@ -328,6 +328,8 @@ MonoBehaviour:
   damage: 0
   particles: {fileID: 1492401909504364, guid: b84ac2a796781e549b184cb3fcba8916, type: 2}
   target: {fileID: 0}
+  Stunned: 0
+  stunLength: 5
 --- !u!114 &114796279489659396
 MonoBehaviour:
   m_ObjectHideFlags: 1

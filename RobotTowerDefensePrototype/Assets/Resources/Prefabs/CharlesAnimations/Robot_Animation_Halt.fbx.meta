@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8ff9503916711f34d9b937cf33c625bf
-timeCreated: 1541724045
+guid: 54485adf844c90641a831f133acf34eb
+timeCreated: 1541726372
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -67,18 +67,16 @@ ModelImporter:
     100118: joint7
     100120: joint8
     100122: Laser
-    100124: //RootNode
-    100126: pCone1
-    100128: pCube1
-    100130: ROBOT
-    100132: Shoulder_L
-    100134: Shoulder_R
-    100136: wheel
-    100138: Wheel_Support
-    100140: Wrist_L
-    100142: Wrist_L 1
-    100144: Wrist_R
-    100146: Wrist_R 1
+    100124: ROBOT
+    100126: //RootNode
+    100128: Shoulder_L
+    100130: Shoulder_R
+    100132: wheel
+    100134: Wheel_Support
+    100136: Wrist_L
+    100138: Wrist_L 1
+    100140: Wrist_R
+    100142: Wrist_R 1
     400000: Arm_L
     400002: Arm_R
     400004: Body
@@ -141,18 +139,16 @@ ModelImporter:
     400118: joint7
     400120: joint8
     400122: Laser
-    400124: //RootNode
-    400126: pCone1
-    400128: pCube1
-    400130: ROBOT
-    400132: Shoulder_L
-    400134: Shoulder_R
-    400136: wheel
-    400138: Wheel_Support
-    400140: Wrist_L
-    400142: Wrist_L 1
-    400144: Wrist_R
-    400146: Wrist_R 1
+    400124: ROBOT
+    400126: //RootNode
+    400128: Shoulder_L
+    400130: Shoulder_R
+    400132: wheel
+    400134: Wheel_Support
+    400136: Wrist_L
+    400138: Wrist_L 1
+    400140: Wrist_R
+    400142: Wrist_R 1
     2100000: blinn1
     2100002: PxrDisney24
     2100004: PxrDisney22
@@ -162,11 +158,6 @@ ModelImporter:
     2100012: PxrDisney23
     2100014: PxrDisney25
     2100016: PxrDisney26
-    2100018: lambert3
-    2300000: pCone1
-    2300002: pCube1
-    3300000: pCone1
-    3300002: pCube1
     4300000: Laser
     4300002: Bowtie
     4300004: Body
@@ -180,8 +171,6 @@ ModelImporter:
     4300020: Hand_L
     4300022: Wheel_Support
     4300024: wheel
-    4300026: pCone1
-    4300028: pCube1
     7400000: Take 001
     9500000: //RootNode
     13700000: Arm_L
@@ -246,7 +235,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

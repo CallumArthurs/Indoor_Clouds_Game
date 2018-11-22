@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23620248929146234}
   - component: {fileID: 114556458358126460}
   - component: {fileID: 65569289882507256}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: turretBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4596216259412796}
   - component: {fileID: 33475755803196652}
   - component: {fileID: 23901967045060904}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4110141322632030}
   - component: {fileID: 33440966374301224}
   - component: {fileID: 23713462675297090}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   range: 50
   cooldown: 0.5
   rotSpeed: 5
+  modifier: 1
   damage: 2
   turretID: 0
   pubCost: 50
-  modifier: 1

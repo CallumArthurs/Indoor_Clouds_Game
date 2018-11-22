@@ -96,15 +96,15 @@ public class BuildingManager : MonoBehaviour {
     //building controls for all regular buildings
     private void BuildingControls()
     {
+        // ~(1 << LayerMask.NameToLayer("Building non-collidables"))
         //left clicking will place down the building but only if the raycast hits something collideable
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Building non-collidables"))))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, 1 << LayerMask.NameToLayer("BuildableLayer")))
         {
             //take away the cost from the money of the player
             Building _curBuildingScript = _curBuilding.GetComponentInChildren<Building>();
             resourceManager.ChangeMoney(-Building.cost[_curBuildingScript.buildingID]);
             if (_curBuildingScript.buildingID == (int)enumBuildingID.turretID)
             {
-
                 resourceManager.turrets.Add((Turret)_curBuildingScript);
             }
             //add the building to the blackboard and turn off placement mode
@@ -123,7 +123,7 @@ public class BuildingManager : MonoBehaviour {
         }
         //move the building to the players mouse position
         _ray = curCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, ~(1 << LayerMask.NameToLayer("Building non-collidables"))))
+        if (Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, 1 << LayerMask.NameToLayer("BuildableLayer")))
         {
             _curBuilding.transform.position = _mousePos.point;
             _curBuilding.transform.Translate(new Vector3(0, 0.5f, 0));

@@ -5,13 +5,12 @@ using UnityEngine;
 public class Turret : Building {
     public GameObject target = null, nozzle, shootParticles;
     public BlackBoard blackBoard = null;
-    public float range = 20.0f, cooldown = 5.0f, rotSpeed = 5.0f;
+    public float range = 20.0f, cooldown = 5.0f, rotSpeed = 5.0f, modifier = 1;
     public int damage = 2, turretID = 0, pubCost = 50;
-
-    public float modifier = 1;
     public static bool noElectricity = false;
-    private RaycastHit _rayHit;
-    private float _curCooldown;
+
+    protected RaycastHit _rayHit;
+    protected float _curCooldown;
     private void Awake()
     {
         //set the static cost of the turret to be what was set in the inspector
@@ -38,12 +37,12 @@ public class Turret : Building {
         _curCooldown -= Time.deltaTime;
     }
     //request targets from the blackboard
-    void FindTargets()
+    protected void FindTargets()
     {
         blackBoard.RequestTargets(this);
     }
     //turret shoots at it's target
-    void TurretActivate()
+    protected void TurretActivate()
     {
         //if the target exited it's range then don't make it the target anymore
         if ((target.transform.position - transform.position).magnitude > range)

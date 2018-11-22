@@ -297,11 +297,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\animation.cs" />
     <Compile Include="Assets\Scripts\BlackBoard.cs" />
     <Compile Include="Assets\Scripts\BlobberSaucer.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
+    <Compile Include="Assets\Scripts\Charles.cs" />
     <Compile Include="Assets\Scripts\Connector.cs" />
     <Compile Include="Assets\Scripts\DestroyParticle.cs" />
     <Compile Include="Assets\Scripts\DifficultyManager.cs" />

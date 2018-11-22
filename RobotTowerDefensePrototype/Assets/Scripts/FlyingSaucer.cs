@@ -10,33 +10,45 @@ public class FlyingSaucer : MonoBehaviour {
     public float speed = 5.0f, range = 20.0f, cooldown = 5.0f;
     public int health = 10, worth = 0, damage = 2;
     public GameObject particles, target;
+    public bool Stunned = false;
+    public float stunLength = 5.0f;
 
     private RaycastHit _rayHit;
-    private float _curCooldown;
+    private float _curCooldown, _curStunTime;
     private int hoverNum;
     private List<Vector3> hoverPath = new List<Vector3>();
     private System.Random rnd = new System.Random();
     void Start () {
-		
-	}
+
+    }
 	
 	void Update () {
         //logic below : saucer has a target shoot at the saucer, then if it has a path avaliable to it follow it, then add the HQ as a path and find a target
-        if (target != null)
+
+        if (!Stunned)
         {
-            SaucerShoot();
+            if (target != null)
+            {
+                SaucerShoot();
+            }
+            else if (path.Count != 0)
+            {
+                FollowPath();
+            }
+            else
+            {
+                path.Add(destination.gameObject);
+                FindTargets();
+            }
+            //shooting cooldown
+            _curCooldown -= Time.deltaTime;
         }
-        else if (path.Count != 0)
+
+        if(_curStunTime <= 0.0f)
         {
-            FollowPath();
+            Stunned = false;
         }
-        else
-        {
-            path.Add(destination.gameObject);
-            FindTargets();
-        }
-        //shooting cooldown
-        _curCooldown -= Time.deltaTime;
+        _curStunTime -= Time.deltaTime;
     }
 
     public void TakeDamage(int Damage)
@@ -48,7 +60,11 @@ public class FlyingSaucer : MonoBehaviour {
             DestroyMe();
         }
     }
-
+    public void GetStunned()
+    {
+        Stunned = true;
+        _curStunTime = stunLength;
+    }
     public void DestroyMe()
     {
         //spawn the saucer's death particle effect
