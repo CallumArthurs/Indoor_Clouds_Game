@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class BlobberSaucer : FlyingSaucer {
+public class BlobberSaucer : FlyingSaucer
+{
 
     private GameObject[] PowerPlants;
     private System.Random rnd = new System.Random();
-	void Start () {
-        
-	}
-	
-	void Update () {
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
         if (target == null)
         {
             FindTargets();
@@ -21,7 +24,7 @@ public class BlobberSaucer : FlyingSaucer {
             Hover();
         }
 
-	}
+    }
 
     public override void FindTargets()
     {
@@ -34,7 +37,7 @@ public class BlobberSaucer : FlyingSaucer {
 
     private void Hover()
     {
-        transform.Translate((target.transform.position - gameObject.transform.position + new Vector3(0,15.0f)).normalized * speed * Time.deltaTime);
+        transform.Translate((target.transform.position - gameObject.transform.position + new Vector3(0, 15.0f)).normalized * speed * Time.deltaTime);
 
         if ((target.transform.position - gameObject.transform.position).magnitude < 5.0f)
         {
@@ -45,7 +48,7 @@ public class BlobberSaucer : FlyingSaucer {
     private void ChangeSpawner(bool value)
     {
         SaucerSpawner[] temp = GetComponentsInChildren<SaucerSpawner>();
-        for(int i = 0; i < temp.Length; i++)
+        for (int i = 0; i < temp.Length; i++)
         {
             temp[i].active = value;
         }

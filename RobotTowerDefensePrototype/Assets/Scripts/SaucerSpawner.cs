@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaucerSpawner : MonoBehaviour {
+public class SaucerSpawner : MonoBehaviour
+{
     public BlackBoard blackBoard = null;
     public GameObject[] saucers = null;
     public List<Path> bBPath = null;
@@ -11,28 +12,33 @@ public class SaucerSpawner : MonoBehaviour {
     public bool active = false;
 
     private float _curTime;
-	void Start () {
+    void Start()
+    {
         _curTime = timer;
     }
-	
-	void Update () {
+
+    void Update()
+    {
         _curTime -= Time.deltaTime;
 
         if (_curTime < 0.0f && active)
         {
+            //spawn a random saucer if the cooldown is zero
             _curTime = timer;
             int RandomNumber = Random.Range(0, saucers.Length);
             Spawn(RandomNumber);
         }
-	}
+    }
 
     public void Spawn(int saucerID)
     {
-        GameObject curSaucer = Instantiate(saucers[saucerID], transform);
+        //spawn the saucer in the world at the position of the spawner
+        GameObject curSaucer = Instantiate(saucers[saucerID], gameObject.transform.position, gameObject.transform.rotation);
         FlyingSaucer tempSaucer = curSaucer.GetComponent<FlyingSaucer>();
-
+        //if the spawner has paths to give to the saucer it will do so
         if (bBPath.Count > 0)
         {
+            //select a random path from the list of paths
             int RandomNumber = Random.Range(0, bBPath.Count);
             Path selectedPath = bBPath[RandomNumber];
             tempSaucer.path.AddRange(selectedPath.pathNodes);
@@ -41,9 +47,13 @@ public class SaucerSpawner : MonoBehaviour {
         if (saucerID == 1)
         {
             tempSaucer.GetComponentInChildren<SaucerSpawner>().headQuarters = headQuarters;
+            tempSaucer.GetComponentInChildren<SaucerSpawner>().blackBoard = blackBoard;
         }
         blackBoard.AddTarget(curSaucer);
         tempSaucer.destination = headQuarters;
         tempSaucer.blackBoard = blackBoard;
+
+        tempSaucer = null;
+        curSaucer = null;
     }
 }
