@@ -14,10 +14,11 @@ public class FlyingSaucer : MonoBehaviour {
     public float stunLength = 5.0f;
 
     private RaycastHit _rayHit;
-    private float _curCooldown, _curStunTime;
     private int hoverNum;
     private List<Vector3> hoverPath = new List<Vector3>();
     private System.Random rnd = new System.Random();
+
+    protected float _curCooldown, _curStunTime;
     void Start () {
 
     }
@@ -68,7 +69,7 @@ public class FlyingSaucer : MonoBehaviour {
     public void DestroyMe()
     {
         //spawn the saucer's death particle effect
-        Instantiate(particles, transform.position, transform.rotation);
+        Instantiate(particles, transform.position, Quaternion.Euler(90,0,0));
         //remove itself from the blackboard
         BlackBoard.saucerTargets.Remove(gameObject);
         Destroy(gameObject);
@@ -88,7 +89,7 @@ public class FlyingSaucer : MonoBehaviour {
         hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 4.0f, rnd.Next(-2, 4)));
     }
 
-    private void FollowPath()
+    protected void FollowPath()
     {
         //moving through the path in it's list
         transform.Translate((path[0].transform.position - gameObject.transform.position).normalized * speed * Time.deltaTime);

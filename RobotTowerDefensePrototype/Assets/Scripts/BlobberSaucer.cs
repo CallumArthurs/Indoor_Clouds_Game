@@ -4,24 +4,32 @@ using UnityEngine;
 using System;
 
 public class BlobberSaucer : FlyingSaucer {
-
     private GameObject[] PowerPlants;
     private System.Random rnd = new System.Random();
     private Animator animator;
+
 	void Start () {
         animator = GetComponentInChildren<Animator>();
     }
 	
 	void Update () {
-        if (target == null)
+        if (!Stunned)
         {
-            FindTargets();
+            if (target == null)
+            {
+                FindTargets();
+            }
+            else
+            {
+                Hover();
+            }
         }
-        else
+
+        if (_curStunTime <= 0.0f)
         {
-            Hover();
+            Stunned = false;
         }
-	}
+    }
 
     public override void FindTargets()
     {

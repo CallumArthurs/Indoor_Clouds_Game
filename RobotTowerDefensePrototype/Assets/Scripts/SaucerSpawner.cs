@@ -12,7 +12,7 @@ public class SaucerSpawner : MonoBehaviour {
 
     private float _curTime;
 	void Start () {
-        _curTime = timer;
+        _curTime = 5.0f;
     }
 	
 	void Update () {

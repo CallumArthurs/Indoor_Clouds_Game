@@ -12,7 +12,8 @@ public class BlackBoard : MonoBehaviour {
     private float _closestEnemyDist = 100;
 
     void Start() {
-       
+        GameObject[] HQs = GameObject.FindGameObjectsWithTag("HeadQuaters");
+        buildings.AddRange(HQs);
     }
     void Update() {
 

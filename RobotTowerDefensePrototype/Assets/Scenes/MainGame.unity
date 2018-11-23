@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3653081, g: 0.4820577, b: 0.5865914, a: 1}
+  m_IndirectSpecularColor: {r: 0.35810143, g: 0.47502953, b: 0.58323354, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -336,7 +336,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4014ac86cb4484886f91237f8b8843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connections: []
+  connectors: []
+  powersources: []
+  buildingID: 0
   health: 1000
+  avaliablePower: 0
+  powered: 0
+  powerSource: 0
   healthtxt: {fileID: 1684517016}
   SceneManager: {fileID: 1890595418}
   particles: {fileID: 1573409169550558, guid: 95d011732cd336f47a0bf22c927e2ed3, type: 2}

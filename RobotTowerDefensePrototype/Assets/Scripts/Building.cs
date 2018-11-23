@@ -65,4 +65,17 @@ public class Building : MonoBehaviour {
         Destroy(gameObject);
     }
 
+    //if a collider enters this object if it's a flying saucer take damage otherwise return
+    private void OnTriggerEnter(Collider other)
+    {
+        FlyingSaucer tempSaucer = other.gameObject.GetComponent<FlyingSaucer>();
+        if (tempSaucer == null)
+        {
+            return;
+        }
+        TakeDamage(tempSaucer.damage);
+        //destroy the saucer that hit the HQ
+        tempSaucer.DestroyMe();
+    }
+
 }

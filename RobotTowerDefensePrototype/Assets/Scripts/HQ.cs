@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HQ : MonoBehaviour {
-    public int health = 50;
+public class HQ : Building {
     public Text healthtxt = null;
     public SceneSwitcher SceneManager = null;
     public GameObject particles;
@@ -19,7 +18,6 @@ public class HQ : MonoBehaviour {
             SceneManager.LostTheGame();
         }
 	}
-    //if a collider enters this object if it's a flying saucer take damage otherwise return
     private void OnTriggerEnter(Collider other)
     {
         FlyingSaucer tempSaucer = other.gameObject.GetComponent<FlyingSaucer>();
@@ -34,7 +32,7 @@ public class HQ : MonoBehaviour {
         //destroy the saucer that hit the HQ
         tempSaucer.DestroyMe();
     }
-    
+
     void UpdateHealth()
     {
         //update the UI with the current health value

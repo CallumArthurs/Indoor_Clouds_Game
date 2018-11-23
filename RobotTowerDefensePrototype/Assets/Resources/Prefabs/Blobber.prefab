@@ -343,10 +343,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackBoard: {fileID: 0}
   saucers:
-  - {fileID: 1231616736578960, guid: 6eb7daf54eb990a469c0708e4a165772, type: 2}
+  - {fileID: 1553798508959674, guid: f421411387580fb4a98932c8e6594298, type: 2}
   bBPath: []
   headQuarters: {fileID: 0}
-  timer: 4
+  timer: 0.75
   active: 0
 --- !u!137 &137028900450425140
 SkinnedMeshRenderer:
