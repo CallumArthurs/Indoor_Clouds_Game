@@ -7,9 +7,10 @@ public class BlobberSaucer : FlyingSaucer {
 
     private GameObject[] PowerPlants;
     private System.Random rnd = new System.Random();
+    private Animator animator;
 	void Start () {
-        
-	}
+        animator = GetComponentInChildren<Animator>();
+    }
 	
 	void Update () {
         if (target == null)
@@ -20,7 +21,6 @@ public class BlobberSaucer : FlyingSaucer {
         {
             Hover();
         }
-
 	}
 
     public override void FindTargets()
@@ -34,12 +34,14 @@ public class BlobberSaucer : FlyingSaucer {
 
     private void Hover()
     {
-        transform.Translate((target.transform.position - gameObject.transform.position + new Vector3(0,15.0f)).normalized * speed * Time.deltaTime);
-
-        if ((target.transform.position - gameObject.transform.position).magnitude < 5.0f)
+        if ((target.transform.position - gameObject.transform.position + new Vector3(0,15.0f)).magnitude <= 0.5f)
         {
             ChangeSpawner(true);
+            animator.SetInteger("ActID", 1);
+            return;
         }
+
+        transform.Translate((target.transform.position - gameObject.transform.position + new Vector3(0, 15.0f)).normalized * speed * Time.deltaTime);
     }
 
     private void ChangeSpawner(bool value)

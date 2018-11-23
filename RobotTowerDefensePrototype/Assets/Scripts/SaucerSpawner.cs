@@ -16,16 +16,19 @@ public class SaucerSpawner : MonoBehaviour {
     }
 	
 	void Update () {
-        _curTime -= Time.deltaTime;
-
-        if (_curTime < 0.0f && active)
+        if (active)
         {
-            //spawn a random saucer if the cooldown is zero
-            _curTime = timer;
-            int RandomNumber = Random.Range(0, saucers.Length);
-            Spawn(RandomNumber);
+            _curTime -= Time.deltaTime;
+
+            if (_curTime < 0.0f)
+            {
+                //spawn a random saucer if the cooldown is zero
+                _curTime = timer;
+                int RandomNumber = Random.Range(0, saucers.Length);
+                Spawn(RandomNumber);
+            }
         }
-	}
+    }
 
     public void Spawn(int saucerID)
     {
