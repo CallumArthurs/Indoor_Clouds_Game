@@ -111,7 +111,7 @@ public class FlyingSaucer : MonoBehaviour {
         //make the hovering above the enemy
         Hover();
         //raycast to get the enemy and make the enemy take damage
-        if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _rayHit) && _curCooldown <= 0)
+        if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _rayHit, LayerMask.NameToLayer("Saucer")) && _curCooldown <= 0)
         {
             Building enemy = _rayHit.collider.gameObject.GetComponent<Building>();
             if (enemy == null)

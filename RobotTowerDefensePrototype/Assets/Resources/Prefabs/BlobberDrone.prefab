@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4649677118151378}
   - component: {fileID: 33525986388793456}
   - component: {fileID: 23033310814055718}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4319924362429616}
   - component: {fileID: 114182404786852752}
   - component: {fileID: 65721827794206562}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BlobberDrone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4623165060653236}
   - component: {fileID: 33279666511699130}
   - component: {fileID: 23226252415309584}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}

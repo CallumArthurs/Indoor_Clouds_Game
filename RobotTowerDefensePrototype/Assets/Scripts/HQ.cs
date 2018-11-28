@@ -17,7 +17,8 @@ public class HQ : Building {
         {
             SceneManager.LostTheGame();
         }
-	}
+        UpdateHealth();
+    }
     private void OnTriggerEnter(Collider other)
     {
         FlyingSaucer tempSaucer = other.gameObject.GetComponent<FlyingSaucer>();

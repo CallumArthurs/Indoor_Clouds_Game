@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23333123573969700}
   - component: {fileID: 135782758066302848}
   - component: {fileID: 114300883887725440}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UFOStandard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

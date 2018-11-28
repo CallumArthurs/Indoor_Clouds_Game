@@ -38,6 +38,10 @@ public class BlobberSaucer : FlyingSaucer {
         {
             target = PowerPlants[rnd.Next(0, PowerPlants.Length)];
         }
+        else
+        {
+            target = GameObject.FindGameObjectWithTag("HeadQuaters");
+        }
     }
 
     private void Hover()
