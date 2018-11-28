@@ -10,7 +10,7 @@ public class Building : MonoBehaviour {
     public List<PowerPlant> powersources;
     public int buildingID = 0, health = 20, avaliablePower = 0;
     public bool powered = false, powerSource = false;
-
+    public GameObject damageParticles;
 
     void Start () {
 		
@@ -53,6 +53,7 @@ public class Building : MonoBehaviour {
         {
             DestroyMe();
         }
+        Instantiate(damageParticles, transform.position, transform.rotation);
     }
 
     public virtual void DestroyMe()

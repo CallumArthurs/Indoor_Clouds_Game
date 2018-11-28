@@ -26,14 +26,13 @@ public class HQ : Building {
         {
             return;
         }
-
-        health--;
+        TakeDamage(1);
         //update health on screen
         UpdateHealth();
         //destroy the saucer that hit the HQ
         tempSaucer.DestroyMe();
     }
-
+    
     void UpdateHealth()
     {
         //update the UI with the current health value

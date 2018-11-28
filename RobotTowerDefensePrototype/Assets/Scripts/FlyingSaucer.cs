@@ -9,7 +9,7 @@ public class FlyingSaucer : MonoBehaviour {
     public HQ destination = null;
     public float speed = 5.0f, range = 20.0f, cooldown = 5.0f;
     public int health = 10, worth = 0, damage = 2;
-    public GameObject particles, target;
+    public GameObject particles, target, damageParticles;
     public bool Stunned = false;
     public float stunLength = 5.0f;
 

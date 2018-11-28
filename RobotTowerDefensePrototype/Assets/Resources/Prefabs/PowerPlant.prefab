@@ -275,6 +275,8 @@ MonoBehaviour:
   avaliablePower: 0
   powered: 0
   powerSource: 0
+  damageParticles: {fileID: 1573409169550558, guid: 95d011732cd336f47a0bf22c927e2ed3,
+    type: 2}
   resourceManager: {fileID: 0}
   availablePower: 10
   pubCost: 50

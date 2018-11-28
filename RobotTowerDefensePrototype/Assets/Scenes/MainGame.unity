@@ -344,6 +344,8 @@ MonoBehaviour:
   avaliablePower: 0
   powered: 0
   powerSource: 0
+  damageParticles: {fileID: 1573409169550558, guid: 95d011732cd336f47a0bf22c927e2ed3,
+    type: 2}
   healthtxt: {fileID: 1684517016}
   SceneManager: {fileID: 1890595418}
   particles: {fileID: 1573409169550558, guid: 95d011732cd336f47a0bf22c927e2ed3, type: 2}
@@ -1055,7 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Buildings:
-  - {fileID: 1081040666166322, guid: 1e5dca789c1b4bd45b9705eef2f2fa75, type: 2}
+  - {fileID: 1959197788430646, guid: 5ed501dec93d63640818251d4e7b43e1, type: 2}
   - {fileID: 1313266527939982, guid: 24629ab66c6e7324993ab89cf5781359, type: 2}
   - {fileID: 1471354466066424, guid: 885cd39422e299243b0048fe49586dcd, type: 2}
   - {fileID: 1469848677971448, guid: 9159f60cb6dd2434e8be78685a41c487, type: 2}
@@ -1584,7 +1586,7 @@ MonoBehaviour:
   saucers:
   - {fileID: 1231616736578960, guid: 6eb7daf54eb990a469c0708e4a165772, type: 2}
   - {fileID: 1569101960550150, guid: 73b3dbd50d713504393f9e7c5f3c0a4a, type: 2}
-  - {fileID: 1553798508959674, guid: f421411387580fb4a98932c8e6594298, type: 2}
+  - {fileID: 1742840203329988, guid: 72d0123a77909d6469351f2e1ec5d192, type: 2}
   bBPath:
   - {fileID: 1574279666}
   - {fileID: 1462540519}

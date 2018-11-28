@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : Building {
-    public GameObject target = null, nozzle, shootParticles;
+    public GameObject target = null, nozzle, shootParticles, PivotPoint;
     public BlackBoard blackBoard = null;
     public float range = 20.0f, cooldown = 5.0f, rotSpeed = 5.0f, modifier = 1;
     public int damage = 2, turretID = 0, pubCost = 50;
@@ -51,10 +51,12 @@ public class Turret : Building {
             return;
         }
         //lerp the nozzle of the turret to the enemy
-        nozzle.transform.rotation = 
-            Quaternion.Slerp(nozzle.transform.rotation, 
-            Quaternion.LookRotation(target.transform.position - nozzle.transform.position), 
+
+        PivotPoint.transform.rotation = 
+            Quaternion.Lerp(PivotPoint.transform.rotation, 
+            Quaternion.LookRotation(target.transform.position - PivotPoint.transform.position), 
             rotSpeed * Time.deltaTime);
+
         //raycast hits it's target, and it's cooldown is at zero (mostlikely made like this so if the saucer out runs the gun it doesn't get hit anyway)
         if (Physics.Raycast(nozzle.transform.position, nozzle.transform.forward, out _rayHit) && _curCooldown <= 0)
         {
