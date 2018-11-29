@@ -10,15 +10,16 @@ public class FlyingSaucer : MonoBehaviour
     public HQ destination = null;
     public float speed = 5.0f, range = 20.0f, cooldown = 5.0f;
     public int health = 10, worth = 0, damage = 2;
-    public GameObject particles, target;
+    public GameObject particles, target, damageParticles;
     public bool Stunned = false;
     public float stunLength = 5.0f;
 
     private RaycastHit _rayHit;
-    private float _curCooldown, _curStunTime;
     private int hoverNum;
     private List<Vector3> hoverPath = new List<Vector3>();
     private System.Random rnd = new System.Random();
+
+    protected float _curCooldown, _curStunTime;
     void Start()
     {
 
@@ -54,7 +55,7 @@ public class FlyingSaucer : MonoBehaviour
         _curStunTime -= Time.deltaTime;
     }
 
-    public void TakeDamage(int Damage)
+    virtual public void TakeDamage(int Damage)
     {
         health -= Damage;
         if (health < 0)
@@ -63,15 +64,15 @@ public class FlyingSaucer : MonoBehaviour
             DestroyMe();
         }
     }
-    public void GetStunned()
+    virtual public void GetStunned()
     {
         Stunned = true;
         _curStunTime = stunLength;
     }
-    public void DestroyMe()
+    virtual public void DestroyMe()
     {
         //spawn the saucer's death particle effect
-        Instantiate(particles, transform.position, transform.rotation);
+        Instantiate(particles, transform.position, Quaternion.Euler(90, 0, 0));
         //remove itself from the blackboard
         BlackBoard.saucerTargets.Remove(gameObject);
         Destroy(gameObject);
@@ -91,7 +92,7 @@ public class FlyingSaucer : MonoBehaviour
         hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 4.0f, rnd.Next(-2, 4)));
     }
 
-    private void FollowPath()
+    protected void FollowPath()
     {
         //moving through the path in it's list
         transform.Translate((path[0].transform.position - gameObject.transform.position).normalized * speed * Time.deltaTime);
@@ -113,7 +114,7 @@ public class FlyingSaucer : MonoBehaviour
         //make the hovering above the enemy
         Hover();
         //raycast to get the enemy and make the enemy take damage
-        if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _rayHit) && _curCooldown <= 0)
+        if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _rayHit, LayerMask.NameToLayer("Saucer")) && _curCooldown <= 0)
         {
             Building enemy = _rayHit.collider.gameObject.GetComponent<Building>();
             if (enemy == null)

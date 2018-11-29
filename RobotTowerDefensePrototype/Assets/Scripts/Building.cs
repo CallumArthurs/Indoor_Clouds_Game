@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    //electricity and cost go in this order (turret1,powerplant,connector,Charles)
     public static int[] electricityCost = { -10, 20, 0, 0 };
     public static int[] cost = { 50, 100, 20, 50 };
     public List<Building> connections;
@@ -11,7 +12,7 @@ public class Building : MonoBehaviour
     public List<PowerPlant> powersources;
     public int buildingID = 0, health = 20, avaliablePower = 0;
     public bool powered = false, powerSource = false;
-
+    public GameObject damageParticles;
 
     void Start()
     {
@@ -56,6 +57,10 @@ public class Building : MonoBehaviour
         {
             DestroyMe();
         }
+        if (damageParticles != null)
+        {
+            Instantiate(damageParticles, transform.position, transform.rotation);
+        }
     }
 
     public virtual void DestroyMe()
@@ -66,6 +71,19 @@ public class Building : MonoBehaviour
             connectors[i].DestroyMe();
         }
         Destroy(gameObject);
+    }
+
+    //if a collider enters this object if it's a flying saucer take damage otherwise return
+    private void OnTriggerEnter(Collider other)
+    {
+        FlyingSaucer tempSaucer = other.gameObject.GetComponent<FlyingSaucer>();
+        if (tempSaucer == null)
+        {
+            return;
+        }
+        TakeDamage(tempSaucer.damage);
+        //destroy the saucer that hit the HQ
+        tempSaucer.DestroyMe();
     }
 
 }

@@ -6,7 +6,7 @@ public class BlackBoard : MonoBehaviour
 {
     public static List<GameObject> saucerTargets = new List<GameObject>();
     public static List<GameObject> buildings = new List<GameObject>();
-    public GameObject HQ = null;
+    public GameObject[] HQs = null;
     public ResourceManager resourceManager = null;
 
     private GameObject _closestEnemy;
@@ -14,7 +14,10 @@ public class BlackBoard : MonoBehaviour
 
     void Start()
     {
-
+        HQs = GameObject.FindGameObjectsWithTag("HeadQuaters");
+        buildings.Clear();
+        saucerTargets.Clear();
+        buildings.AddRange(HQs);
     }
     void Update()
     {
@@ -24,7 +27,7 @@ public class BlackBoard : MonoBehaviour
     //enemies in the static list are cycled through and the one closest to the current turret object is set as the turret's target
     public void RequestTargets(Turret obj)
     {
-        if (saucerTargets == null)
+        if (saucerTargets.Count == 0)
         {
             return;
         }
@@ -43,11 +46,12 @@ public class BlackBoard : MonoBehaviour
             }
         }
         obj.target = _closestEnemy;
+        _closestEnemy = null;
     }
     //buildings in the static list are cycled through and the one closest to the current saucer object is set as the saucer's target
     public void RequestBuildingTargets(FlyingSaucer obj)
     {
-        if (buildings == null)
+        if (buildings.Count == 0)
         {
             return;
         }
@@ -61,8 +65,8 @@ public class BlackBoard : MonoBehaviour
                 _closestEnemyDist = ((buildings[i].transform.position) - obj.transform.position).magnitude;
             }
         }
-
         obj.target = _closestEnemy;
+        _closestEnemy = null;
     }
     //add a saucer to the saucer list (outdated since it's now a static list)
     public void AddTarget(GameObject obj)
