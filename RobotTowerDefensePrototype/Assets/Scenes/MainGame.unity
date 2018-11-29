@@ -902,7 +902,7 @@ MonoBehaviour:
   spawner:
   - {fileID: 1587583901}
   timerText: {fileID: 590700570}
-  DifficultyScale: 100
+  DifficultyScale: 40
 --- !u!1 &1214155736
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,8 +965,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Buildings:
   - {fileID: 1959197788430646, guid: 5ed501dec93d63640818251d4e7b43e1, type: 2}
-  - {fileID: 1313266527939982, guid: 24629ab66c6e7324993ab89cf5781359, type: 2}
-  - {fileID: 1471354466066424, guid: 885cd39422e299243b0048fe49586dcd, type: 2}
+  - {fileID: 1588414897344968, guid: 24629ab66c6e7324993ab89cf5781359, type: 2}
+  - {fileID: 1161185776715036, guid: 885cd39422e299243b0048fe49586dcd, type: 2}
   - {fileID: 1469848677971448, guid: 9159f60cb6dd2434e8be78685a41c487, type: 2}
   connector: {fileID: 1499525163712408, guid: 8805e23af766869448df1c63e9f5d15d, type: 2}
   buildingInfoUI: {fileID: 1356804415913252, guid: 3708cdde93dfc434b8d3c8cb52ff2985,

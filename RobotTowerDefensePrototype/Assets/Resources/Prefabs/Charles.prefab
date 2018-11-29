@@ -2159,10 +2159,12 @@ MonoBehaviour:
   connectors: []
   powersources: []
   buildingID: 0
-  health: 20
+  health: 100
   avaliablePower: 0
   powered: 1
   powerSource: 0
+  damageParticles: {fileID: 1492401909504364, guid: b84ac2a796781e549b184cb3fcba8916,
+    type: 2}
   range: 20
   cooldown: 10
 --- !u!137 &137082764348536082
