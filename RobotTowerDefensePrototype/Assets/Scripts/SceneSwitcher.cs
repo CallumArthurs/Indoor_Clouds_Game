@@ -23,6 +23,12 @@ public class SceneSwitcher : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void HelpScreen()
+    {
+        SceneManager.LoadScene("HelpScreen");
+    }
+
+
     public void QuitGame()
     {
         Application.Quit();

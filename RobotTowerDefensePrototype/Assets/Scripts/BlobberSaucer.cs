@@ -19,6 +19,10 @@ public class BlobberSaucer : FlyingSaucer {
             {
                 FindTargets();
             }
+            else if (path.Count != 0)
+            {
+                FollowPath();
+            }
             else
             {
                 Hover();
@@ -29,6 +33,7 @@ public class BlobberSaucer : FlyingSaucer {
         {
             Stunned = false;
         }
+        _curStunTime -= Time.deltaTime;
     }
 
     public override void FindTargets()
@@ -42,6 +47,13 @@ public class BlobberSaucer : FlyingSaucer {
         {
             target = GameObject.FindGameObjectWithTag("HeadQuaters");
         }
+    }
+
+    public override void GetStunned()
+    {
+        Stunned = true;
+        ChangeSpawner(false);
+        _curStunTime = stunLength;
     }
 
     private void Hover()

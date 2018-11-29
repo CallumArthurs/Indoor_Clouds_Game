@@ -28,6 +28,11 @@ public class FlyingSaucer : MonoBehaviour {
 
         if (!Stunned)
         {
+            if(destination == null)
+            {
+                destination = (GameObject.FindGameObjectWithTag("HeadQuaters")).GetComponent<HQ>();
+            }
+
             if (target != null)
             {
                 SaucerShoot();
