@@ -52,7 +52,7 @@ public class FlyingSaucer : MonoBehaviour {
         _curStunTime -= Time.deltaTime;
     }
 
-    public void TakeDamage(int Damage)
+    virtual public void TakeDamage(int Damage)
     {
         health -= Damage;
         if(health < 0)
@@ -61,12 +61,12 @@ public class FlyingSaucer : MonoBehaviour {
             DestroyMe();
         }
     }
-    public void GetStunned()
+    virtual public void GetStunned()
     {
         Stunned = true;
         _curStunTime = stunLength;
     }
-    public void DestroyMe()
+    virtual public void DestroyMe()
     {
         //spawn the saucer's death particle effect
         Instantiate(particles, transform.position, Quaternion.Euler(90,0,0));

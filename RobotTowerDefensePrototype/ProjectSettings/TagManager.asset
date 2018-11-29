@@ -7,6 +7,7 @@ TagManager:
   - BlackBoard
   - PowerPlant
   - HeadQuaters
+  - Spawner
   layers:
   - Default
   - TransparentFX

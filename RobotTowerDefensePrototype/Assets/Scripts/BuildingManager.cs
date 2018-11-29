@@ -19,64 +19,41 @@ public class BuildingManager : MonoBehaviour {
     private RaycastHit _mousePos;
     private Building _connection, _selectedBuilding;
     private Transmitter _connector;
-
+    private int _numOfCharles = 0;
 
     void Start () {
 
     }
 
     void Update() {
-        //pressing "B" will take you into building mode as to not accidently open up info panels
-        if (Input.GetKeyDown(KeyCode.B))
+        if (_curBuilding != null && _placingBuilding)
         {
-            buildingMode = !buildingMode;
-            if (_buildinginfoUIText != null)
-            {
-                _buildinginfoUIText.gameObject.SetActive(false);
-            }
+            BuildingControls();
         }
-        //run the different controls depending on if you are making a building or a connector
-        if (buildingMode)
+        else if (_placingConnector)
         {
-            if (_curBuilding != null && _placingBuilding)
-            {
-                BuildingControls();
-            }
-            else if (_placingConnector)
-            {
-                BuildingConnector();
-            }
-        }
-        else
-        {
-            //if you click on a building bring up the info panel on it
-            if (Input.GetMouseButtonDown(0))
-            {
-                _ray = curCamera.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(_ray, out _mousePos))
-                {
-                    _selectedBuilding = _mousePos.collider.gameObject.GetComponent<Building>();
-                    if (_selectedBuilding != null)
-                    {
-                        UpdateInfoUI();
-                    }
-                }
-            }
-            
+            BuildingConnector();
         }
     }
 
     //check if the player has enough money for the building make the building and make it follow the mouse postion in the world
     public void CreateBuilding (int BuildingID)
     {
-        if (Building.cost[BuildingID] < resourceManager.money)
+        if (Building.cost[BuildingID] < resourceManager.money && !_placingBuilding || _placingConnector)
         {
+            if(BuildingID == 3)
+            {
+                if(_numOfCharles > 0)
+                {
+                    return;
+                }
+                _numOfCharles++;
+            }
             _selectedBuilding = null;
             _curBuilding = Instantiate(Buildings[BuildingID], new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
             _curBuilding.GetComponentInChildren<Building>().buildingID = BuildingID;
             _placingBuilding = true;
         }
-
         UpdateBuildCosts();
     }
     //make the connector run the building controls for it
@@ -126,7 +103,6 @@ public class BuildingManager : MonoBehaviour {
         if (Physics.Raycast(_ray, out _mousePos, Mathf.Infinity, 1 << LayerMask.NameToLayer("BuildableLayer")))
         {
             _curBuilding.transform.position = _mousePos.point;
-            _curBuilding.transform.Translate(new Vector3(0, 0.5f, 0));
         }
     }
     //building controls for the connector tool

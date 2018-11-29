@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 4498875444989516}
   - component: {fileID: 114008753427464604}
   - component: {fileID: 65016776907831150}
+  - component: {fileID: 54399825470324460}
   m_Layer: 0
   m_Name: Turret1
   m_TagString: Untagged
@@ -937,7 +938,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959197788430646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3126013, y: 3.90819e-15, z: -4.3749037}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4205630131404536}
@@ -2577,6 +2578,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341144314741804}
   m_Mesh: {fileID: 4300012, guid: 7bdef45f47b574245a3045dad3f6040f, type: 3}
+--- !u!54 &54399825470324460
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959197788430646}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65016776907831150
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2584,11 +2600,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959197788430646}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.1934767, y: 5.130841, z: 2.8874302}
-  m_Center: {x: 0.47904444, y: 2.0654204, z: -0.9437151}
+  m_Size: {x: 4.1934767, y: 4.2322145, z: 3.8695908}
+  m_Center: {x: 0.47904444, y: 1.6161072, z: -0.4526348}
 --- !u!95 &95695108235425160
 Animator:
   serializedVersion: 3
@@ -2623,9 +2639,10 @@ MonoBehaviour:
   buildingID: 0
   health: 20
   avaliablePower: 0
-  powered: 1
+  powered: 0
   powerSource: 0
-  damageParticles: {fileID: 0}
+  damageParticles: {fileID: 1573409169550558, guid: 95d011732cd336f47a0bf22c927e2ed3,
+    type: 2}
   target: {fileID: 0}
   nozzle: {fileID: 1434193158545466}
   shootParticles: {fileID: 1290725643449872, guid: acc2246c04e648444b0bd1b361d70962,

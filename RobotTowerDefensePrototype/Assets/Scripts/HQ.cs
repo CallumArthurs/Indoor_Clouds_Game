@@ -27,12 +27,16 @@ public class HQ : Building {
             return;
         }
         TakeDamage(1);
-        //update health on screen
-        UpdateHealth();
         //destroy the saucer that hit the HQ
         tempSaucer.DestroyMe();
     }
-    
+    public override void TakeDamage(int Damage)
+    {
+        health -= Damage;
+        Instantiate(damageParticles, transform.position, transform.rotation);
+        //update health on screen
+        UpdateHealth();
+    }
     void UpdateHealth()
     {
         //update the UI with the current health value

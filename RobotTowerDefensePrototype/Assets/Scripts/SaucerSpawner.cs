@@ -23,7 +23,11 @@ public class SaucerSpawner : MonoBehaviour {
             if (_curTime < 0.0f)
             {
                 //spawn a random saucer if the cooldown is zero
-                _curTime = timer;
+                _curTime = timer - DifficultyManager.DifficultyScore;
+                if (_curTime < 0)
+                {
+                    _curTime = 1;
+                }
                 int RandomNumber = Random.Range(0, saucers.Length);
                 Spawn(RandomNumber);
             }

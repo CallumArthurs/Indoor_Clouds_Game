@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Building : MonoBehaviour {
+    //electricity and cost go in this order (turret1,powerplant,connector,Charles)
     public static int[] electricityCost = {-10, 20, 0, 0};
     public static int[] cost = {50, 100, 20, 50};
     public List<Building> connections;
@@ -53,7 +54,10 @@ public class Building : MonoBehaviour {
         {
             DestroyMe();
         }
-        Instantiate(damageParticles, transform.position, transform.rotation);
+        if(damageParticles != null)
+        {
+            Instantiate(damageParticles, transform.position, transform.rotation);
+        }
     }
 
     public virtual void DestroyMe()

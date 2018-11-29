@@ -2,19 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ParticleSystem))]
 public class DestroyParticle : MonoBehaviour {
-    private ParticleSystem p = null;
+    public List<ParticleSystem> p = new List<ParticleSystem>();
 
     private void Start()
     {
-        p = GetComponent<ParticleSystem>();
+        p.AddRange(GetComponentsInChildren<ParticleSystem>());
     }
 
-    void Update () {
-		if (!(p.IsAlive()))
+    void Update() {
+        for (int i = 0; i < p.Count; i++)
+        {
+            if (!(p[i].IsAlive()))
+            {
+                ParticleSystem temp = p[i];
+                p.Remove(p[i]);
+                Destroy(temp.gameObject);
+                
+            }
+        }
+        if(p.Count <= 0)
         {
             Destroy(gameObject);
         }
-	}
+    }
 }

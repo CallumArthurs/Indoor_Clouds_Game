@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4727384714814376}
   - component: {fileID: 198229647098856500}
   - component: {fileID: 199531193538621402}
-  - component: {fileID: 114899081593464248}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -37,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4689454092459168}
+  - component: {fileID: 114414110821053802}
   m_Layer: 0
   m_Name: ExplosionParticlePrefab
   m_TagString: Untagged
@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 4805241583694872}
   - component: {fileID: 198447533364542884}
   - component: {fileID: 199661630415601660}
-  - component: {fileID: 114570453846595458}
   m_Layer: 0
   m_Name: HighRange
   m_TagString: Untagged
@@ -103,23 +102,12 @@ Transform:
   m_Father: {fileID: 4689454092459168}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
---- !u!114 &114570453846595458
+--- !u!114 &114414110821053802
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978042968814042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf43ba02c2f5c541a1c6b0977b375ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114899081593464248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1478806909842238}
+  m_GameObject: {fileID: 1492401909504364}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdf43ba02c2f5c541a1c6b0977b375ca, type: 3}
