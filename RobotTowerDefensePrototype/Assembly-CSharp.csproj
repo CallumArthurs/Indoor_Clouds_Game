@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Charles.cs" />
+    <Compile Include="Assets\Scripts\Clouds.cs" />
     <Compile Include="Assets\Scripts\Connector.cs" />
     <Compile Include="Assets\Scripts\DestroyParticle.cs" />
     <Compile Include="Assets\Scripts\DifficultyManager.cs" />
@@ -82,17 +83,17 @@
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <None Include="Assets\Resources\Shaders\ToonShader.shader" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>C:/Users/kiri/Documents/GitHub/Indoor_Clouds_Game/RobotTowerDefensePrototype/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/kiri/Documents/GitHub/Indoor_Clouds_Game/RobotTowerDefensePrototype/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Users/kiri/Documents/GitHub/Indoor_Clouds_Game/RobotTowerDefensePrototype/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/kiri/Documents/GitHub/Indoor_Clouds_Game/RobotTowerDefensePrototype/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/kiri/Documents/GitHub/Indoor_Clouds_Game/RobotTowerDefensePrototype/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/kiri/Documents/GitHub/Indoor_Clouds_Game/RobotTowerDefensePrototype/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -322,6 +323,12 @@
     <Reference Include="Boo.Lang">
       <HintPath>E:/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{70021E79-CDD0-940E-4495-B15F632B74BF}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
