@@ -58,9 +58,9 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Diffuse: 0.437
+    - _Diffuse: 0.37
     - _DstBlend: 0
-    - _FadeDiffuse: 0.956
+    - _FadeDiffuse: 0.983
     - _FadeShadow: 0.99
     - _FadeSpecular: 0.96
     - _GlossMapScale: 1
@@ -69,7 +69,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.374
+    - _Outline: 0.215
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _Specular: 0.657
@@ -80,8 +80,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.8490566, g: 0.758277, b: 0.6448024, a: 1}
+    - _DiffuseColor: {r: 0.5471698, g: 0.42678854, b: 0.28132787, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0.18448643, g: 0, b: 0.31132078, a: 0}
-    - _ShadowColor: {r: 0, g: 0.4811321, b: 0.20879321, a: 1}
+    - _ShadowColor: {r: 0, g: 0.4811321, b: 0.20731711, a: 1}
     - _SpecularColor: {r: 0.8098767, g: 0.6273585, b: 1, a: 1}

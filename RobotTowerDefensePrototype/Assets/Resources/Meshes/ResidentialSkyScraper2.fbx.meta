@@ -19,7 +19,27 @@ ModelImporter:
     3300002: pCube2
     4300000: pCube1
     4300002: pCube2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Building
+    second: {fileID: 2100000, guid: 330b6730d3d2bf24ca4642093bed7e58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: ff1d1a546d829484ebc162c4039ce054, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows
+    second: {fileID: 2100000, guid: 2ce87ddf9f2701e4193f7a64bc42ce00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: c779cdb019134724fb94bb84b4e18f99, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

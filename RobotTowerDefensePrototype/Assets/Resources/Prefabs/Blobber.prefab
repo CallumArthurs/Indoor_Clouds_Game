@@ -306,6 +306,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114739839278950952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,7 +321,7 @@ MonoBehaviour:
   blackBoard: {fileID: 0}
   path: []
   destination: {fileID: 0}
-  speed: 2
+  speed: 20
   range: 1000
   cooldown: 0
   health: 50
@@ -328,6 +329,9 @@ MonoBehaviour:
   damage: 0
   particles: {fileID: 1492401909504364, guid: b84ac2a796781e549b184cb3fcba8916, type: 2}
   target: {fileID: 0}
+  damageParticles: {fileID: 0}
+  Stunned: 0
+  stunLength: 5
 --- !u!114 &114796279489659396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -359,6 +363,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9d302dea2d6e80349a11600ada1e7491, type: 3}
   m_StaticBatchInfo:
@@ -406,6 +411,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9d302dea2d6e80349a11600ada1e7491, type: 3}
   m_StaticBatchInfo:

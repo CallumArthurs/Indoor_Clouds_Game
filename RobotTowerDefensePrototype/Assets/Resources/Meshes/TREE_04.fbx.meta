@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 1da44f5a34288024aa72f6bb1dcc5282
-timeCreated: 1542840331
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -29,7 +27,12 @@ ModelImporter:
     4300004: pCone3
     4300006: pCube1
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: fa9165948bea3864081826e3bc0b33c3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -48,6 +51,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

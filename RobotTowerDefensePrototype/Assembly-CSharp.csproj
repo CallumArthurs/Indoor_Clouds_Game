@@ -67,7 +67,6 @@
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\CameraMove.cs" />
-    <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Charles.cs" />
     <Compile Include="Assets\Scripts\Clouds.cs" />
     <Compile Include="Assets\Scripts\Connector.cs" />
@@ -75,6 +74,7 @@
     <Compile Include="Assets\Scripts\DifficultyManager.cs" />
     <Compile Include="Assets\Scripts\FlyingSaucer.cs" />
     <Compile Include="Assets\Scripts\HQ.cs" />
+    <Compile Include="Assets\Scripts\Kamekazi_UFO.cs" />
     <Compile Include="Assets\Scripts\Path.cs" />
     <Compile Include="Assets\Scripts\PowerPlant.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Transmitter.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+    <None Include="Assets\Resources\Shaders\ItemGlow.shader" />
     <None Include="Assets\Resources\Shaders\ToonShader.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/kiri/Documents/GitHub/Indoor_Clouds_Game/RobotTowerDefensePrototype/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

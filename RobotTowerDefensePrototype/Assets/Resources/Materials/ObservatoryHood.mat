@@ -61,8 +61,8 @@ Material:
     - _Diffuse: 0.1
     - _DstBlend: 0
     - _FadeDiffuse: 0.932
-    - _FadeShadow: 0.98
-    - _FadeSpecular: 0.837
+    - _FadeShadow: 0.95
+    - _FadeSpecular: 0.77
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -84,4 +84,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0.18431373, g: 0, b: 0.30980393, a: 0}
     - _ShadowColor: {r: 0.12829298, g: 0.2924528, b: 0.1921329, a: 1}
-    - _SpecularColor: {r: 0.9955975, g: 0.9009434, b: 1, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

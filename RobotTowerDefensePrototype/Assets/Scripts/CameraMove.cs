@@ -27,28 +27,28 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("a"))
+        if (Input.GetKeyDown("a"))
         {
             currentLoc = currentLoc - 1;
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKeyDown("d"))
         {
             currentLoc = currentLoc + 1;
         }
         Locupdate();
 
 
-        transform.position = Vector3.MoveTowards(transform.position, checkPoints[currentLoc].position, speed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, checkPoints[currentLoc].position, speed * Time.deltaTime);
         if (Input.GetKey("w"))
         {
             idkWhat = motherShip.position - transform.position;
             mumsRotation = Quaternion.LookRotation(idkWhat);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, mumsRotation, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, mumsRotation, speed * Time.deltaTime);
         }
         else
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, checkPoints[currentLoc].rotation, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, checkPoints[currentLoc].rotation, speed * Time.deltaTime);
         }
     }
 
