@@ -166,3 +166,7 @@ C:\Users\Callum\Documents\P4V\2018_Yr1\users\s181540\RobotTowerDefensePrototype\
 C:\Users\Callum\Documents\P4V\2018_Yr1\users\s181540\RobotTowerDefensePrototype\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Callum\Documents\P4V\2018_Yr1\users\s181540\RobotTowerDefensePrototype\obj\Debug\Assembly-CSharp.dll
 C:\Users\Callum\Documents\P4V\2018_Yr1\users\s181540\RobotTowerDefensePrototype\obj\Debug\Assembly-CSharp.pdb
+C:\Users\kiri\Documents\GitHub\Indoor_Clouds_Game\RobotTowerDefensePrototype\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\kiri\Documents\GitHub\Indoor_Clouds_Game\RobotTowerDefensePrototype\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\kiri\Documents\GitHub\Indoor_Clouds_Game\RobotTowerDefensePrototype\obj\Debug\Assembly-CSharp.dll
+C:\Users\kiri\Documents\GitHub\Indoor_Clouds_Game\RobotTowerDefensePrototype\obj\Debug\Assembly-CSharp.pdb

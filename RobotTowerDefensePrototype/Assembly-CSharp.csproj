@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\BlobberSaucer.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
+    <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Charles.cs" />
     <Compile Include="Assets\Scripts\Clouds.cs" />
