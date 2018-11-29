@@ -61,7 +61,7 @@ Material:
     - _Diffuse: 0.1
     - _DstBlend: 0
     - _FadeDiffuse: 0.938
-    - _FadeShadow: 0.8
+    - _FadeShadow: 0.793
     - _FadeSpecular: 0.938
     - _GlossMapScale: 1
     - _Glossiness: 0
@@ -75,7 +75,7 @@ Material:
     - _Specular: 0.72
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TexAlpha: 0
+    - _TexAlpha: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
