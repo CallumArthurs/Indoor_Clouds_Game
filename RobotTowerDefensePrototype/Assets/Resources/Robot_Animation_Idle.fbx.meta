@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: d2ba799fb58db3743aaa6f2609f76f01
+timeCreated: 1543547360
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_R
+    100004: Body
+    100006: Bowtie
+    100008: CTRL_Antenna_1
+    100010: CTRL_Antenna_2
+    100012: CTRL_Antenna_3
+    100014: CTRL_Antenna_4
+    100016: CTRL_Arm_1_L
+    100018: CTRL_Arm_1_R
+    100020: CTRL_Arm_2_L
+    100022: CTRL_Arm_2_R
+    100024: CTRL_Bowtie
+    100026: CTRL_Elbow_L
+    100028: CTRL_Elbow_R
+    100030: CTRL_Hand_L
+    100032: CTRL_Hand_R
+    100034: CTRL_Head
+    100036: CTRL_Laser
+    100038: CTRL_Leg
+    100040: CTRL_Master
+    100042: CTRL_Neck
+    100044: CTRL_ROOT
+    100046: CTRL_Shoulder_L
+    100048: CTRL_Shoulder_R
+    100050: CTRL_Spine_1
+    100052: CTRL_Spine_2
+    100054: CTRL_Wheel
+    100056: CTRL_Wrist_L
+    100058: CTRL_Wrist_R
+    100060: Elbow_L
+    100062: Elbow_R
+    100064: Hand_L
+    100066: Hand_L 1
+    100068: Hand_R
+    100070: Hand_R 1
+    100072: Head
+    100074: JNT_Bowtie
+    100076: JNT_Clavicle_L
+    100078: JNT_Clavicle_R
+    100080: JNT_Head
+    100082: JNT_Laser
+    100084: JNT_Leg
+    100086: JNT_Neck
+    100088: JNT_ROOT
+    100090: JNT_Shoulder_L
+    100092: JNT_Shoulder_R
+    100094: JNT_Spine
+    100096: JNT_Waist
+    100098: JNT_Wheel
+    100100: joint1
+    100102: joint10
+    100104: joint11
+    100106: joint12
+    100108: joint2
+    100110: joint3
+    100112: joint4
+    100114: joint6
+    100116: joint7
+    100118: joint8
+    100120: joint9
+    100122: Laser
+    100124: ROBOT
+    100126: //RootNode
+    100128: Shoulder_L
+    100130: Shoulder_R
+    100132: wheel
+    100134: Wheel_Support
+    100136: Wrist_L
+    100138: Wrist_L 1
+    100140: Wrist_R
+    100142: Wrist_R 1
+    400000: Arm_L
+    400002: Arm_R
+    400004: Body
+    400006: Bowtie
+    400008: CTRL_Antenna_1
+    400010: CTRL_Antenna_2
+    400012: CTRL_Antenna_3
+    400014: CTRL_Antenna_4
+    400016: CTRL_Arm_1_L
+    400018: CTRL_Arm_1_R
+    400020: CTRL_Arm_2_L
+    400022: CTRL_Arm_2_R
+    400024: CTRL_Bowtie
+    400026: CTRL_Elbow_L
+    400028: CTRL_Elbow_R
+    400030: CTRL_Hand_L
+    400032: CTRL_Hand_R
+    400034: CTRL_Head
+    400036: CTRL_Laser
+    400038: CTRL_Leg
+    400040: CTRL_Master
+    400042: CTRL_Neck
+    400044: CTRL_ROOT
+    400046: CTRL_Shoulder_L
+    400048: CTRL_Shoulder_R
+    400050: CTRL_Spine_1
+    400052: CTRL_Spine_2
+    400054: CTRL_Wheel
+    400056: CTRL_Wrist_L
+    400058: CTRL_Wrist_R
+    400060: Elbow_L
+    400062: Elbow_R
+    400064: Hand_L
+    400066: Hand_L 1
+    400068: Hand_R
+    400070: Hand_R 1
+    400072: Head
+    400074: JNT_Bowtie
+    400076: JNT_Clavicle_L
+    400078: JNT_Clavicle_R
+    400080: JNT_Head
+    400082: JNT_Laser
+    400084: JNT_Leg
+    400086: JNT_Neck
+    400088: JNT_ROOT
+    400090: JNT_Shoulder_L
+    400092: JNT_Shoulder_R
+    400094: JNT_Spine
+    400096: JNT_Waist
+    400098: JNT_Wheel
+    400100: joint1
+    400102: joint10
+    400104: joint11
+    400106: joint12
+    400108: joint2
+    400110: joint3
+    400112: joint4
+    400114: joint6
+    400116: joint7
+    400118: joint8
+    400120: joint9
+    400122: Laser
+    400124: ROBOT
+    400126: //RootNode
+    400128: Shoulder_L
+    400130: Shoulder_R
+    400132: wheel
+    400134: Wheel_Support
+    400136: Wrist_L
+    400138: Wrist_L 1
+    400140: Wrist_R
+    400142: Wrist_R 1
+    2100000: blinn1
+    2100002: PxrDisney24
+    2100004: PxrDisney22
+    2100006: PxrDisney21
+    2100008: lambert1
+    2100010: PxrDisney20
+    2100012: PxrDisney23
+    2100014: PxrDisney25
+    2100016: PxrDisney26
+    4300000: Laser
+    4300002: Bowtie
+    4300004: Body
+    4300006: Shoulder_R
+    4300008: Arm_R
+    4300010: Wrist_R
+    4300012: Hand_R
+    4300014: Shoulder_L
+    4300016: Arm_L
+    4300018: Wrist_L
+    4300020: Hand_L
+    4300022: Wheel_Support
+    4300024: wheel
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Arm_L
+    13700002: Arm_R
+    13700004: Body
+    13700006: Bowtie
+    13700008: Hand_L
+    13700010: Hand_R
+    13700012: Laser
+    13700014: Shoulder_L
+    13700016: Shoulder_R
+    13700018: wheel
+    13700020: Wheel_Support
+    13700022: Wrist_L
+    13700024: Wrist_R
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

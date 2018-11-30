@@ -42,6 +42,7 @@ public class Charles : Building
                 tempSaucers.Add(BlackBoard.saucerTargets[i].GetComponent<FlyingSaucer>());
             }
         }
+        _curCooldown = cooldown;
 
         if (tempSaucers.Count <= 0)
         {
@@ -52,7 +53,6 @@ public class Charles : Building
         {
             tempSaucers[i].GetStunned();
         }
-        _curCooldown = cooldown;
         tempSaucers.Clear();
     }
     void PlayAnimation(int aniID)
