@@ -50,12 +50,7 @@ public class HQ : Building {
     }
     void UpdateHealth()
     {
-        _allHQHealth = health;
-        for(int i = 0; i < HQs.Count; i++)
-        {
-            _allHQHealth += HQs[i].GetComponent<HQ>().health;
-        }
         //update the UI with the current health value
-        healthtxt.text = "Health: " + _allHQHealth.ToString();
+        healthtxt.text = "Health: " + health.ToString();
     }
 }

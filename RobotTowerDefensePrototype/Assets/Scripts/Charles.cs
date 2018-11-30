@@ -9,7 +9,7 @@ public class Charles : Building {
     private Animator animator;
     private BlackBoard blackboard;
     private float _curCooldown;
-    private enum animations {Idle,Attack,selfDestruct}
+    private enum animations {Idle,Attack,selfDestruct,}
 	void Start () {
         animator = GetComponent<Animator>();
         blackboard = GameObject.FindGameObjectWithTag("BlackBoard").GetComponent<BlackBoard>();

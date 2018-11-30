@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4508663854729860}
   m_Layer: 0
-  m_Name: transmitter
+  m_Name: Transmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

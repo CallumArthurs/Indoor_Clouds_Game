@@ -42,13 +42,13 @@ MonoBehaviour:
     height: 682
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
   - {fileID: 13}
   - {fileID: 16}
-  m_Selected: 2
-  m_LastSelected: 1
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -70,7 +70,7 @@ MonoBehaviour:
     y: 0
     width: 1680
     height: 1008
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &4
 MonoBehaviour:
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 28
+  controlID: 122
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 271}
   m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
-  controlID: 79
+  controlID: 52
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -447,10 +447,10 @@ MonoBehaviour:
   m_LastProjectPath: C:\Users\s181540\Documents\GitHub\Indoor_Clouds_Game\RobotTowerDefensePrototype
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4e290000
-    m_LastClickedID: 10574
-    m_ExpandedIDs: 00000000c22700004e290000642a0000e22b00006032000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 34}
+    m_SelectedIDs: cc320000
+    m_LastClickedID: 13004
+    m_ExpandedIDs: 0000000088310000cc320000b6330000e0340000b037000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -478,7 +478,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c22700004e290000642a0000e22b000060320000
+    m_ExpandedIDs: 0000000088310000cc320000b6330000e0340000b0370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,21 +506,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000382900005027feffa4acffffb8270000f82a0000382c0000e429000000000000d27effff242d0000302d00000c280000d837000096490000c4450000a64b000090280000bc500000a4610000466900004e280000367600002a4f0000d43df9ff86440000
+    m_ExpandedInstanceIDs: c6230000382900005027feffa4acffffb8270000f82a0000382c0000e429000000000000d27effff242d0000302d00000c280000d837000096490000c4450000a64b000090280000bc500000a4610000466900004e280000367600002a4f0000d43df9ff86440000902e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Resources
+      m_OriginalName: Resources
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 13238
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
@@ -530,7 +530,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 82}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_DirectoriesAreaWidth: 151
 --- !u!114 &16
@@ -580,7 +580,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -643,9 +643,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.7930484, y: 1.2876691, z: -0.70770013}
+    m_Target: {x: -22.577215, y: 13.352041, z: -3.139799}
     speed: 2
-    m_Value: {x: -0.7930484, y: 1.2876691, z: -0.70770013}
+    m_Value: {x: -22.577215, y: 13.352041, z: -3.139799}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -669,13 +669,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.060468722, y: -0.90135163, z: 0.13378067, w: -0.4074453}
+    m_Target: {x: 0.1507561, y: 0.7078712, z: -0.15892503, w: 0.67151606}
     speed: 2
-    m_Value: {x: -0.060468722, y: -0.90135163, z: 0.13378067, w: -0.4074453}
+    m_Value: {x: 0.1507561, y: 0.7078712, z: -0.15892503, w: 0.67151606}
   m_Size:
-    m_Target: 6.4468746
+    m_Target: 5.5042014
     speed: 2
-    m_Value: 6.4468746
+    m_Value: 5.5042014
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -716,9 +716,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4ec10000
-    m_LastClickedID: 49486
-    m_ExpandedIDs: aacfd8ff8cd0d8ffb4d1d8ffbcd1d8ff10f1d9ffc4fed9ff2244dcff52ccdfff8839e0ffac98e0ff8499e0ffb09ae0ffbc9ae0ff123ce8ffe2b8e8ff066decff5c6decff7e6decffa06decffca6decff3c6eecff5e6eecff806eecffaa6eecffcc6eecffee6eecff106fecff326fecff546fecffb06fecffd26fecfff46fecffd270ecfff470ecff1671ecff2872ecff4e72ecff7072ecff3a73ecff5c73ecff7e73ecffa073ecffc273ecffe473ecff0674ecff2c74ecffe074ecff6e75ecff9075ecff2277ecff4477ecff6677ecff8877ecffb277ecff0878ecff2a78ecff4c78ecff0679ecff2879ecff4a79ecff7079ecff9279ecffb479ecffd679ecfff879ecff1a7aecfffe7aecff207becff9a7becffbc7becffde7becffd27cecff3cfffaff42fffaff46fffaff8235fbff8635fbff9035fbffd488fbffda88fbffde88fbff9efbffff00000000c88f0000e08f00009c93000054c10000
+    m_SelectedIDs: 10370000
+    m_LastClickedID: 14096
+    m_ExpandedIDs: 5207fffff698ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

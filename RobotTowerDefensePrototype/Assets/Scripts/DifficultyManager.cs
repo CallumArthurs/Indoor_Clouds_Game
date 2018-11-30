@@ -29,7 +29,7 @@ public class DifficultyManager : MonoBehaviour {
     }
     void UpdateTimer()
     {
-        timerText.text = _timeScore.ToString();
+        timerText.text = _timeScore.ToString("F2");
     }
     void CalculateDifficulty()
     {
