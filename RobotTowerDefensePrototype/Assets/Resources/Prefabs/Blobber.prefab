@@ -226,7 +226,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1569101960550150}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37290612, y: 5.28, z: 118.79}
+  m_LocalPosition: {x: 50.173393, y: 167.41217, z: -840.797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4287383645895422}
@@ -306,7 +306,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114739839278950952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,7 +348,7 @@ MonoBehaviour:
   bBPath: []
   headQuarters: {fileID: 0}
   timer: 4
-  active: 1
+  active: 0
 --- !u!137 &137028900450425140
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -363,7 +362,6 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9d302dea2d6e80349a11600ada1e7491, type: 3}
   m_StaticBatchInfo:
@@ -411,7 +409,6 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9d302dea2d6e80349a11600ada1e7491, type: 3}
   m_StaticBatchInfo:

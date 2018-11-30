@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kamekazi_UFO : FlyingSaucer {
+public class Kamakazi_UFO : FlyingSaucer
+{
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class Kamekazi_UFO : FlyingSaucer {
         {
             if (target != null)
             {
-                KameKazi();
+                KamaKazi();
             }
             else if (path.Count != 0)
             {
@@ -32,7 +33,7 @@ public class Kamekazi_UFO : FlyingSaucer {
 
     }
 
-    void KameKazi()
+    void KamaKazi()
     {
         transform.Translate((target.transform.position - gameObject.transform.position).normalized * Time.deltaTime * speed);
     }

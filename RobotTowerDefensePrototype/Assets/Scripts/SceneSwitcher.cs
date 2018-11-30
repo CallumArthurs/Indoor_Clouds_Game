@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSwitcher : MonoBehaviour {
+public class SceneSwitcher : MonoBehaviour
+{
 
-	void Start () {
+    void Start()
+    {
         Cursor.lockState = CursorLockMode.Confined;
-	}
-	
-	void Update () {
+    }
+
+    void Update()
+    {
 
     }
 
@@ -22,6 +25,12 @@ public class SceneSwitcher : MonoBehaviour {
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void HelpScreen()
+    {
+        SceneManager.LoadScene("HelpScreen");
+    }
+
 
     public void QuitGame()
     {

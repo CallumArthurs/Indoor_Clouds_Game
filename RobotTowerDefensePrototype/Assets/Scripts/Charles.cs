@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Charles : Building {
+public class Charles : Building
+{
     public float range = 20.0f;
     public float cooldown;
 
     private Animator animator;
     private BlackBoard blackboard;
     private float _curCooldown;
-    private enum animations {Idle,Attack,selfDestruct}
-	void Start () {
+    private enum animations { Idle, Attack, selfDestruct }
+    void Start()
+    {
         animator = GetComponent<Animator>();
         blackboard = GameObject.FindGameObjectWithTag("BlackBoard").GetComponent<BlackBoard>();
         _curCooldown = cooldown;
     }
 
-    void Update () {
+    void Update()
+    {
         // if the turret is powered then active and shoot at their target
         if (powered && _curCooldown <= 0.0f)
         {
@@ -45,7 +48,7 @@ public class Charles : Building {
             return;
         }
 
-        for(int i = 0; i < tempSaucers.Count; i++)
+        for (int i = 0; i < tempSaucers.Count; i++)
         {
             tempSaucers[i].GetStunned();
         }
