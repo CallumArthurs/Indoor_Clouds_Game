@@ -35,6 +35,10 @@ public class FlyingSaucer : MonoBehaviour
             {
                 destination = (GameObject.FindGameObjectWithTag("HeadQuaters")).GetComponent<HQ>();
             }
+            if (target == null)
+            {
+                FindTargets();
+            }
 
             if (target != null)
             {
@@ -47,7 +51,6 @@ public class FlyingSaucer : MonoBehaviour
             else
             {
                 path.Add(destination.gameObject);
-                FindTargets();
             }
             //shooting cooldown
             _curCooldown -= Time.deltaTime;
@@ -92,9 +95,9 @@ public class FlyingSaucer : MonoBehaviour
             return;
         }
         hoverPath.Clear();
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-4, 1), 4.0f, rnd.Next(1, 4)));
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1, 4), 4.0f, rnd.Next(-1, 4)));
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 4.0f, rnd.Next(-2, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-4, 1), 15.0f, rnd.Next(1, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1, 4), 15.0f, rnd.Next(-1, 4)));
+        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 15.0f, rnd.Next(-2, 4)));
     }
 
     protected void FollowPath()
@@ -121,7 +124,7 @@ public class FlyingSaucer : MonoBehaviour
         //raycast to get the enemy and make the enemy take damage
         if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _rayHit, LayerMask.NameToLayer("Saucer")) && _curCooldown <= 0)
         {
-            Building enemy = _rayHit.collider.gameObject.GetComponent<Building>();
+            Building enemy = _rayHit.collider.gameObject.GetComponentInChildren<Building>();
             if (enemy == null)
             {
                 return;

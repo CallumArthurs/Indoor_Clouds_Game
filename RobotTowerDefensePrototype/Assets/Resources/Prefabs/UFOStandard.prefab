@@ -99,7 +99,7 @@ MonoBehaviour:
   path: []
   destination: {fileID: 0}
   speed: 40
-  range: 20
+  range: 50
   cooldown: 5
   health: 10
   worth: 10
