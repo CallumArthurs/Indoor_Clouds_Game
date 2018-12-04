@@ -102,6 +102,11 @@ public class FlyingSaucer : MonoBehaviour
 
     protected void FollowPath()
     {
+        if (path[0] == null)
+        {
+            path.RemoveAt(0);
+            return;
+        }
         //moving through the path in it's list
         transform.Translate((path[0].transform.position - gameObject.transform.position).normalized * speed * Time.deltaTime);
         //remove the path node from the list if the saucer is close enough to it

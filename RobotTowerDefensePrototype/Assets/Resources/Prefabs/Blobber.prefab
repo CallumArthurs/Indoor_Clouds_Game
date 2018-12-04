@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4287383645895422}
   - component: {fileID: 114796279489659396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4234547132467484}
   - component: {fileID: 137028900450425140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 95564481995204392}
   - component: {fileID: 114739839278950952}
   - component: {fileID: 65850587712031502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blobber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4665195593831636}
   - component: {fileID: 137072885984330252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4545762435515152}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4422968137511082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4861408933987556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4279175240344868}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4017946838843474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
