@@ -12,6 +12,7 @@ public class SaucerSpawner : MonoBehaviour
     public bool active = false;
 
     private float _curTime;
+    private float blobberTime;
     void Start()
     {
         _curTime = 5.0f;
@@ -34,6 +35,8 @@ public class SaucerSpawner : MonoBehaviour
                 int RandomNumber = Random.Range(0, saucers.Length);
                 Spawn(RandomNumber);
             }
+
+
         }
     }
 
