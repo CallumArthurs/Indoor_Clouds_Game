@@ -109,6 +109,8 @@ MonoBehaviour:
   damageParticles: {fileID: 0}
   Stunned: 0
   stunLength: 5
+  FireParticle: {fileID: 1188995551466242, guid: 3af8b4b3694a6454891a7835978ab77d,
+    type: 2}
 --- !u!135 &135782758066302848
 SphereCollider:
   m_ObjectHideFlags: 1

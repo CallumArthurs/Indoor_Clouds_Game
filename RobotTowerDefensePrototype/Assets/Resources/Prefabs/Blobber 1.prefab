@@ -349,6 +349,7 @@ MonoBehaviour:
   damageParticles: {fileID: 0}
   Stunned: 0
   stunLength: 5
+  FireParticle: {fileID: 0}
 --- !u!137 &137235240417729042
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -410,7 +411,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9d302dea2d6e80349a11600ada1e7491, type: 3}
+  - {fileID: 2100000, guid: 07b6521892a61fc4090295b4d702d576, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

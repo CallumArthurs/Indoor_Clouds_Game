@@ -13,6 +13,7 @@ public class FlyingSaucer : MonoBehaviour
     public GameObject particles, target, damageParticles;
     public bool Stunned = false;
     public float stunLength = 5.0f;
+	public GameObject FireParticle;
 
     private RaycastHit _rayHit;
     private int hoverNum;
@@ -95,9 +96,9 @@ public class FlyingSaucer : MonoBehaviour
             return;
         }
         hoverPath.Clear();
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-4, 1), 15.0f, rnd.Next(1, 4)));
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1, 4), 15.0f, rnd.Next(-1, 4)));
-        hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2, 2), 15.0f, rnd.Next(-2, 4)));
+		hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-4 *(int)(speed / 10.0f), 1*(int)(speed / 10.0f)), 15.0f, rnd.Next(1*(int)(speed / 10.0f), 4*(int)(speed / 10.0f))));
+		hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-1*(int)(speed / 10.0f), 4*(int)(speed / 10.0f)), 15.0f, rnd.Next(-1*(int)(speed / 10.0f), 4*(int)(speed / 10.0f))));
+		hoverPath.Add(target.transform.position + new Vector3(rnd.Next(-2*(int)(speed / 10.0f), 2*(int)(speed / 10.0f)), 15.0f, rnd.Next(-2*(int)(speed / 10.0f), 4*(int)(speed / 10.0f))));
     }
 
     protected void FollowPath()
@@ -129,6 +130,8 @@ public class FlyingSaucer : MonoBehaviour
         //raycast to get the enemy and make the enemy take damage
         if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _rayHit, LayerMask.NameToLayer("Saucer")) && _curCooldown <= 0)
         {
+			GameObject temp = Instantiate(FireParticle, gameObject.transform.position, Quaternion.identity);
+			temp.transform.LookAt (target.transform.position);
             Building enemy = _rayHit.collider.gameObject.GetComponentInChildren<Building>();
             if (enemy == null)
             {
@@ -146,7 +149,7 @@ public class FlyingSaucer : MonoBehaviour
             hoverNum = 0;
         }
 
-        transform.Translate((hoverPath[hoverNum] - gameObject.transform.position).normalized * speed * Time.deltaTime);
+        transform.Translate((hoverPath[hoverNum] - gameObject.transform.position).normalized * speed * 0.5f * Time.deltaTime);
         //move on to the next hover node if the saucer is close enough to it
         if ((hoverPath[hoverNum] - gameObject.transform.position).magnitude < 1.0f)
         {

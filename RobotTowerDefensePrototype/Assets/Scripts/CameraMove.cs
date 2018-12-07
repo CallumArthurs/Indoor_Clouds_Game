@@ -12,7 +12,6 @@ public class CameraMove : MonoBehaviour
     public string LookUpCunt;
     public float speed;
     public Transform motherShip;
-    public Transform mumsCamera;
     private Quaternion mumsRotation;
     private Vector3 idkWhat;
 
@@ -38,15 +37,14 @@ public class CameraMove : MonoBehaviour
         }
         Locupdate();
 
-
         transform.position = Vector3.Lerp(transform.position, checkPoints[currentLoc].position, speed * Time.deltaTime);
-        if (Input.GetKey("w"))
+        
+		if (Input.GetKey("w"))
         {
             idkWhat = motherShip.position - transform.position;
-            transform.position = Vector3.Lerp(transform.position, mumsCamera.position, speed * Time.deltaTime);
             mumsRotation = Quaternion.LookRotation(idkWhat);
 
-            transform.rotation = Quaternion.Lerp(transform.rotation, mumsCamera.rotation, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, mumsRotation, speed * Time.deltaTime);
         }
         else
         {
